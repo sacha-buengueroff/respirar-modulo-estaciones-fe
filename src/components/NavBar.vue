@@ -34,6 +34,11 @@
               <a class="nav-link" href="#">Estaciones</a>
             </router-link>
           </li>
+          <li class="nav-item">
+            <router-link to="/formulario-estacion">
+              <a class="nav-link" href="#">Agrega tu Estacion</a>
+            </router-link>
+          </li>
           <li class="nav-item" v-if="!usuarioLogeadoVuex">
             <router-link to="/newsletter">
               <a class="nav-link" href="#">Suscribirse al Newsletter</a>

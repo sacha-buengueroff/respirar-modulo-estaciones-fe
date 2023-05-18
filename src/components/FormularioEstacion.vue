@@ -10,156 +10,136 @@
             <!--    FORMULARIO Estacion     -->
             <vue-form :state="formStateEstacion" @submit.prevent="enviarEstacion()">
               <!-- ----------------------------------- -->
-              <!--            CAMPO TITULO             -->
+              <!--            CAMPO NOMBRE             -->
               <!-- ----------------------------------- -->
               <validate tag="div">
-                <label for="titulo">Titulo</label>
+                <label for="nombre">Nombre</label>
                 <input
                   type="text"
-                  id="titulo"
+                  id="nombre"
                   class="form-control"
                   autocomplete="off"
-                  v-model="formDataEstacion.titulo"
-                  name="titulo"
+                  v-model="formDataEstacion.nombre"
+                  name="nombre"
                   required
-                  :minlength="tituloMinLength"
+                  :minlength="nombreMinLength"
                 />
-                <field-messages name="titulo" show="$dirty">
+                <field-messages name="nombre" show="$dirty">
                   <div slot="required" class="alert alert-danger mt-1">
                     Campo requerido
                   </div>
                   <div slot="minlength" class="alert alert-danger mt-1">
                     Este campo debe poseer al menos
-                    {{ tituloMinLength }} caracteres
+                    {{ nombreMinLength }} caracteres
                   </div>
                 </field-messages>
               </validate>
-
               <br />
 
               <!-- ----------------------------------- -->
-              <!--         CAMPO DESCRIPCIÓN           -->
+              <!--        CAMPO Street Address         -->
               <!-- ----------------------------------- -->
               <validate tag="div">
-                <label for="descripcion">Descripción</label>
-                <textarea
+                <label for="streetAdress">Street Adress</label>
+                <input
                   type="text"
-                  id="descripcion"
+                  id="streetAdress"
                   class="form-control"
                   autocomplete="off"
-                  v-model.trim="formDataEstacion.descripcion"
-                  name="descripcion"
+                  v-model="formDataEstacion.streetAdress"
+                  name="streetAdress"
                   required
-                  rows="15"
-                >
-                </textarea>
-                <field-messages name="descripcion" show="$dirty">
+                  :minlength="nombreMinLength"
+                />
+                <field-messages name="streetAdress" show="$dirty">
                   <div slot="required" class="alert alert-danger mt-1">
                     Campo requerido
                   </div>
+                  <div slot="minlength" class="alert alert-danger mt-1">
+                    Este campo debe poseer al menos
+                    {{ nombreMinLength }} caracteres
+                  </div>
                 </field-messages>
               </validate>
-
               <br />
 
               <!-- ----------------------------------- -->
-              <!--           CAMPO CATEGORÍA           -->
+              <!--       CAMPO Address Locality        -->
               <!-- ----------------------------------- -->
-              <div class="form-row">
-                <div class="form-group col-md-4">
-                  <validate tag="div">
-                    <label for="categoria">Categoría</label>
-                    <select
-                      name="categoria"
-                      id="categoria"
-                      class="form-control"
-                      v-model="formDataEstacion.categoria"
-                      required
-                    >
-                      <option
-                        v-for="(categoria, index) in options.categorias"
-                        :key="index"
-                      >
-                        {{ categoria }}
-                      </option>
-                      <option value="Otro">Otro</option>
-                    </select>
-                    <field-messages name="categoria" show="$dirty">
-                      <div slot="required" class="alert alert-danger mt-1">
-                        Campo requerido
-                      </div>
-                    </field-messages>
-                  </validate>
-                </div>
-                <div
-                  class="form-group col-md-6"
-                  v-if="formDataEstacion.categoria == 'Otro'"
-                >
-                  <validate tag="div">
-                    <label for="otra-categoria">Categoría</label>
-                    <input
-                      type="text"
-                      id="otra-categoria"
-                      class="form-control"
-                      autocomplete="off"
-                      v-model="formDataEstacion.otraCategoria"
-                      name="otra-categoria"
-                      required
-                    />
-                    <field-messages name="otra-categoria" show="$dirty">
-                      <div slot="required" class="alert alert-danger mt-1">
-                        Campo requerido
-                      </div>
-                    </field-messages>
-                  </validate>
-                </div>
-              </div>
+              <validate tag="div">
+                <label for="adressLocality">Address Locality</label>
+                <input
+                  type="text"
+                  id="adressLocality"
+                  class="form-control"
+                  autocomplete="off"
+                  v-model="formDataEstacion.adressLocality"
+                  name="adressLocality"
+                  required
+                  :minlength="nombreMinLength"
+                />
+                <field-messages name="adressLocality" show="$dirty">
+                  <div slot="required" class="alert alert-danger mt-1">
+                    Campo requerido
+                  </div>
+                  <div slot="minlength" class="alert alert-danger mt-1">
+                    Este campo debe poseer al menos
+                    {{ nombreMinLength }} caracteres
+                  </div>
+                </field-messages>
+              </validate>
+              <br />
 
               <!-- ----------------------------------- -->
-              <!--           CAMPO MOMENTO             -->
+              <!--        CAMPO Address Region         -->
               <!-- ----------------------------------- -->
+              <validate tag="div">
+                <label for="adressRegion">Address Region</label>
+                <input
+                  type="text"
+                  id="adressRegion"
+                  class="form-control"
+                  autocomplete="off"
+                  v-model="formDataEstacion.adressRegion"
+                  name="adressRegion"
+                  required
+                  :minlength="nombreMinLength"
+                />
+                <field-messages name="adressRegion" show="$dirty">
+                  <div slot="required" class="alert alert-danger mt-1">
+                    Campo requerido
+                  </div>
+                  <div slot="minlength" class="alert alert-danger mt-1">
+                    Este campo debe poseer al menos
+                    {{ nombreMinLength }} caracteres
+                  </div>
+                </field-messages>
+              </validate>
+              <br />
+
+              <!-- -------------------------------------------- -->
+              <!--           CAMPO Tipo de conexion             -->
+              <!-- -------------------------------------------- -->
               <div class="form-row">
                 <div class="form-group col-md-4">
                   <validate tag="div">
-                    <label for="momento">Momento</label>
+                    <label for="tipoConexion">Tipo de conexion</label>
                     <select
                       name="cateogria"
-                      id="momento"
+                      id="tipoConexion"
                       class="form-control"
-                      v-model="formDataEstacion.momento"
+                      v-model="formDataEstacion.tipoConexion"
                       required
                     >
                       <option
-                        v-for="(momento, index) in options.momentos"
+                        v-for="(tipoConexion, index) in options.tipoConexiones"
                         :key="index"
                       >
-                        {{ momento }}
+                        {{ tipoConexion }}
                       </option>
                       <option value="Otro">Otro</option>
                     </select>
-                    <field-messages name="momento" show="$dirty">
-                      <div slot="required" class="alert alert-danger mt-1">
-                        Campo requerido
-                      </div>
-                    </field-messages>
-                  </validate>
-                </div>
-                <div
-                  class="form-group col-md-6"
-                  v-if="formDataEstacion.momento == 'Otro'"
-                >
-                  <validate tag="div">
-                    <label for="otro-momento">Momento</label>
-                    <input
-                      type="text"
-                      id="otro-momento"
-                      class="form-control"
-                      autocomplete="off"
-                      v-model="formDataEstacion.otroMomento"
-                      name="otro-momento"
-                      required
-                    />
-                    <field-messages name="otro-momento" show="$dirty">
+                    <field-messages name="tipoConexion" show="$dirty">
                       <div slot="required" class="alert alert-danger mt-1">
                         Campo requerido
                       </div>
@@ -169,67 +149,9 @@
               </div>
               <button
                 class="btn btn-success my-3"
-                :disabled="formStateEstacion.$invalid || ingredientes.length == 0"
+                :disabled="formStateEstacion.$invalid"
               >
                 Enviar estacion
-              </button>
-            </vue-form>
-          </td>
-          <td class="estacion col-6">
-            <!--    FORMULARIO INGREDIENTES     -->
-            <vue-form
-              :state="formStateIngrediente"
-              @submit.prevent="enviarIngrediente()"
-            >
-              <!-- ----------------------------------- -->
-              <!--         CAMPO INGREDIENTE           -->
-              <!-- ----------------------------------- -->
-              <validate tag="div">
-                <label for="ingrediente">Ingrediente</label>
-                <input
-                  type="text"
-                  id="ingrediente"
-                  class="form-control"
-                  autocomplete="off"
-                  v-model="formDataIngrediente.nombre"
-                  name="ingrediente"
-                  required
-                />
-                <field-messages name="ingrediente" show="$dirty">
-                  <div slot="required" class="alert alert-danger mt-1">
-                    Campo requerido
-                  </div>
-                </field-messages>
-              </validate>
-
-              <br />
-
-              <!-- ----------------------------------- -->
-              <!--           CAMPO CANTIDAD            -->
-              <!-- ----------------------------------- -->
-              <validate tag="div">
-                <label for="cantidad">Cantidad</label>
-                <input
-                  type="text"
-                  id="cantidad"
-                  class="form-control"
-                  autocomplete="off"
-                  v-model.trim="formDataIngrediente.cantidad"
-                  name="cantidad"
-                  required
-                />
-                <field-messages name="cantidad" show="$dirty">
-                  <div slot="required" class="alert alert-danger mt-1">
-                    Campo requerido
-                  </div>
-                </field-messages>
-              </validate>
-
-              <button
-                class="btn btn-success my-3"
-                :disabled="formStateIngrediente.$invalid"
-              >
-                Agregar
               </button>
             </vue-form>
           </td>
@@ -244,36 +166,8 @@
         class="jumbotron2"
         style="background-color: rgb(235, 255, 251); color: black"
       >
-        <h1>{{ formDataEstacion.titulo }}</h1>
+        <h1>{{ formDataEstacion.nombre }}</h1>
         <hr />
-        <h5>{{ `Categoría: ${formDataEstacion.categoria}` }}</h5>
-        <h5>{{ `Momento: ${formDataEstacion.momento}` }}</h5>
-        <div class="table-responsive">
-          <table class="table">
-            <thead class="thead-dark">
-              <tr>
-                <th>Ingrediente</th>
-                <th>Cantidad</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tr v-for="(ing, index) in ingredientes" :key="index">
-              <td>{{ ing.nombre }}</td>
-              <td>{{ ing.cantidad }}</td>
-              <td>
-                <button
-                  type="button"
-                  class="btn btn-warning"
-                  @click="ingredientes.splice(index, 1)"
-                >
-                  Eliminar
-                </button>
-              </td>
-            </tr>
-          </table>
-        </div>
-        <hr />
-        <p style="white-space: pre-line">{{ formDataEstacion.descripcion }}</p>
       </div>
     </div>
   </div>
@@ -291,12 +185,9 @@ export default {
   data() {
     return {
       formDataEstacion: this.getInitialDataEstacion(),
-      formDataIngrediente: this.getInitialDataIngrediente(),
       formStateEstacion: {},
-      formStateIngrediente: {},
       datos: null,
-      ingredientes: [],
-      tituloMinLength: 3,
+      nombreMinLength: 3,
       limiteVerde: 1000,
       limiteNaranja: 5000,
       presupuesto: "",
@@ -304,37 +195,19 @@ export default {
       options: [],
     };
   },
-  methods: {
+  methods: { 
     getInitialDataEstacion() {
       return {
-        titulo: "",
-        descripcion: "",
-        categoria: "",
-        momento: "",
-        otraCategoria: "",
-        otroMomento: ""
-      };
-    },
-    getInitialDataIngrediente() {
-      return {
         nombre: "",
-        cantidad: "",
+        tipoConexion: "",
       };
     },
     async enviarEstacion() {
-      let titulo = this.formDataEstacion.titulo;
-      titulo = titulo.charAt(0).toUpperCase() + titulo.slice(1).toLowerCase();
-      this.formDataEstacion.titulo = titulo;
+      let nombre = this.formDataEstacion.nombre;
+      nombre = nombre.charAt(0).toUpperCase() + nombre.slice(1).toLowerCase();
+      this.formDataEstacion.nombre = nombre;
       this.datos = this.formDataEstacion;
-      if (this.formDataEstacion.categoria == "Otro") {
-        this.datos.categoria = this.formDataEstacion.otraCategoria
-      }
-      if (this.formDataEstacion.otroMomento == "Otro") {
-        this.datos.momento = this.formDataEstacion.otroMomento
-      }
-      this.datos.ingredientes = this.ingredientes;
       this.formDataEstacion = this.getInitialDataEstacion();
-      this.ingredientes = [];
       this.formStateEstacion._reset();
       try {
         let { data } = await this.axios.post(this.url, this.datos, {
@@ -351,37 +224,26 @@ export default {
         console.log(error);
       }
     },
-    enviarIngrediente() {
-      let nombre = this.formDataIngrediente.nombre;
-      nombre = nombre.charAt(0).toUpperCase() + nombre.slice(1).toLowerCase();
-      this.formDataIngrediente.nombre = nombre;
-      this.ingredientes.push(this.formDataIngrediente);
-      this.formDataIngrediente = this.getInitialDataIngrediente();
-      this.formStateIngrediente._reset();
-    },
     mostrarEstacion() {
       return (
-        this.formDataEstacion.titulo != "" ||
-        this.formDataEstacion.descripcion != "" ||
-        this.ingredientes.length > 0
+        this.formDataEstacion.nombre != ""
       );
     },
     async getOptions() {
       try {
         let res = await this.axios(this.url);
         let estaciones = res.data;
-        let categorias = estaciones.map((estacion) => estacion.categoria);
-        categorias = [...new Set(categorias)];
-        let momentos = estaciones.map((estacion) => estacion.momento);
-        momentos = [...new Set(momentos)];
-        this.options = { categorias, momentos };
+        let tipoConexiones = estaciones.map((estacion) => estacion.tipoConexion);
+        tipoConexiones = [...new Set(tipoConexiones)];
+        this.options = { tipoConexiones };
       } catch (error) {
         console.log(error);
       }
-    },
+    }
   },
-  computed: {},
-};
+  computed: {}
+  }
+  
 </script>
 
 <style scoped lang="css">
