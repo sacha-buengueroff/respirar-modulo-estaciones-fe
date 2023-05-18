@@ -22,6 +22,22 @@
             <td>{{ estacion.temperature }}</td>
           </tr>
           <tr>
+            <td>pm1</td>
+            <td>{{ estacion.pm1 }}</td>
+          </tr>
+          <tr>
+            <td>pm10</td>
+            <td>{{ estacion.pm10 }}</td>
+          </tr>
+          <tr>
+            <td>pm25</td>
+            <td>{{ estacion.pm25 }}</td>
+          </tr>
+          <tr>
+            <td>Reliability</td>
+            <td>{{ estacion.reliability }}</td>
+          </tr>
+          <tr>
             <div class="custom-control custom-switch">
               <input
                 type="checkbox"
@@ -33,7 +49,7 @@
                 {{ habilitadoDeshabilitado }}
               </label>
             </div>
-          </tr>
+          </tr>       
         </tbody>
       </table>
     </div>
