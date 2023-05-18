@@ -20,9 +20,9 @@ const miMixinGlobal = {
             let momento = this.$store.state.estacion.momento
             return momento
         },
-        mostrarIngredientesVuex() {
-            let ingredientes = this.$store.state.estacion.ingredientes
-            return ingredientes
+        mostrarEstacionVuex() {
+            let estacion = this.$store.state.estacion
+            return estacion
         },
         mostrarLikesVuex() {
             let likes = this.$store.state.estacion.likes

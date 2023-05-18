@@ -38,6 +38,10 @@
             <td>{{ estacion.reliability }}</td>
           </tr>
           <tr>
+            <td>Tipo de conexión</td>
+            <td>{{ estacion.tipoConexion }}</td>
+          </tr>
+          <tr>
             <div class="custom-control custom-switch">
               <input
                 type="checkbox"
@@ -74,10 +78,12 @@ export default {
       this.$store.dispatch("modificarEstacion", this.estacion);
       this.$router.push("/estacion");
     },
+    
+        
   },
   computed: {
     habilitadoDeshabilitado() {
-      if(this.habilitacion) {
+      if(this.habilitacion) {        
         return "Habilitado"
       }
       else {

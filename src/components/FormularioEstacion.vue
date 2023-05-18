@@ -136,8 +136,7 @@
                         :key="index"
                       >
                         {{ tipoConexion }}
-                      </option>
-                      <option value="Otro">Otro</option>
+                      </option>                  
                     </select>
                     <field-messages name="tipoConexion" show="$dirty">
                       <div slot="required" class="alert alert-danger mt-1">
@@ -191,7 +190,7 @@ export default {
       limiteVerde: 1000,
       limiteNaranja: 5000,
       presupuesto: "",
-      url: "http://localhost:8080/estaciones/",
+      url: "https://635723ad9243cf412f93b0b0.mockapi.io/estaciones",
       options: [],
     };
   },
