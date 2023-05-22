@@ -15,11 +15,11 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <ul class="navbar-nav mr-auto mt-2">
           <li class="nav-item logo">
             <router-link to="/">
               <a class="nav-link" href="#">
-                <img src="../images/Respirar.png" alt="">
+                <img src="../images/7.png" alt="">
               </a>
             </router-link>
           </li>
@@ -100,10 +100,10 @@ export default {
 
 <style scoped lang="css">
 .nav-link img{
-  width: 70px;
+  width: 190px;
 }
 li a img{
-  margin-top: -10px!important;
+  margin-top: -82px!important;
   margin-right: 0px!important;
   margin-left: -10px;
 }
@@ -127,7 +127,7 @@ a:hover{
 button{
   background-color: #2f2f2f;
   border-color: #2f2f2f;
-  margin-top: -25px!important;
+  margin-top: -75px!important;
 }
 button:hover{
   background-color: #4B9960!important;

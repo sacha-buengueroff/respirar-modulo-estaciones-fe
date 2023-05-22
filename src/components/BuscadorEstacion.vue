@@ -88,7 +88,7 @@ export default {
       let estacionesFiltradas = this.estaciones;
       if (this.nombreEstacion != "") {
         estacionesFiltradas = estacionesFiltradas.filter((estacion) =>
-          estacion.nombre.toLowerCase().includes(this.nombreEstacion)
+          estacion.ownerId.value.toLowerCase().includes(this.nombreEstacion)
         );
       }
       return estacionesFiltradas;
@@ -111,11 +111,14 @@ export default {
   color: white;
   background-size: cover;
   height: 75vh;
+  padding: 2rem 2rem!important;
+  margin-bottom: 0px!important;
 }
 
 .jumbotron2 {
   padding: 30px 10px;
-  background-color: #2f2f2fb3;
+  background: rgb(255,255,255);
+background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(75,153,96,1) 67%, rgba(67,105,77,1) 100%);
   color: white;
   background-size: cover;
 }

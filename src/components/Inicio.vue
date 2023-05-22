@@ -43,7 +43,7 @@
   </div>
   <h1 class="titulo"><span>Sobre nosotros...</span></h1>
   <div class="media my-5 w-75 mx-auto">
-  <img src="../images/Respirar.png" class="align-self-center mr-3 w-25" alt="...">
+  <img src="../images/Respirar.png" class="align-self-center mr-3 imagenNosotros" alt="...">
   <div class="media-body mt-5">
     <h5 class="mt-0">Sobre Respirar</h5>
     <p>En Respirar, aca va un texto muy largo para explicar porque tenemos los mejores sensores! ahora voy a repetir esto un par de veces.En Respirar, aca va un texto muy largo para explicar porque tenemos los mejores sensores! ahora voy a repetir esto un par de veces.</p>
@@ -133,6 +133,12 @@ export default {
 </script>
 
 <style scoped lang="css">
+
+.imagenNosotros{
+  width: 40%!important;
+  margin-left: -80px;
+  margin-top: -90px;
+}
 .carousel{
   opacity: 50%;
 

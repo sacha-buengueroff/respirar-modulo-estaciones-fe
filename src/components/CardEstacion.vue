@@ -1,7 +1,7 @@
 <template>
   <div
     class="card cardHover"
-    :style="{ 'background-color': todosLosIngredientes ? '#c9ffc7' : 'white' }"
+    
   >
     <div class="card-body">
       <h2 class="card-title" @click="mostrarEstacion()">
@@ -107,9 +107,27 @@ export default {
 </script>
 
 <style scoped  lang="css">
-.cardHover:hover {
-  background-color: #d9553b;
-  transition: 1s;
+
+.card{
+  border-radius: 8px;
+  border: 1px solid #000000;
+  padding: 5px;
+  box-sizing: border-box;
+  transition: all linear 200ms;
+}
+.card:hover {
+  color: white;
+  background-color: #4b9960;
+  transform: scale(1.03);
+  transition: all linear 200ms;
+  z-index: 1;
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 10px rgba(0,0,0,.3);
   cursor: pointer;
+}
+
+.card:hover table{
+  color: white;
+  transition: all linear 200ms;
 }
 </style>
