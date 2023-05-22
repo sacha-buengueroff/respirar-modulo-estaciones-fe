@@ -188,8 +188,6 @@ export default {
       formStateEstacion: {},
       datos: null,
       nombreMinLength: 3,
-      limiteVerde: 1000,
-      limiteNaranja: 5000,
       presupuesto: "",
       url: "http://localhost:8080/estaciones",
       options: [],
@@ -213,7 +211,7 @@ export default {
       this.formStateEstacion._reset();
       let body = {
         name: this.datos.nombre,
-        coordinates: [-38.6486495, -163.369692],
+        coordinates: [],
         addStreet: this.datos.streetAdress,
         addlocaly: this.datos.adressLocality,
         addRegion: this.datos.adressRegion,

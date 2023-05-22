@@ -36,6 +36,18 @@
                         <b>Reliability: </b>
                         {{ mostrarReliabilityVuex }}
                       </li>
+                      <li>
+                        <b>Street Address: </b>
+                        {{ mostrarStreetAddressVuex }}
+                      </li>
+                      <li>
+                        <b>Address Locality: </b>
+                        {{ mostrarAddressLocalityVuex }}
+                      </li>
+                      <li>
+                        <b>Addres Region: </b>
+                        {{ mostrarAddressRegionVuex }}
+                      </li>
                     </ul>
                   </td>
                 </tr>

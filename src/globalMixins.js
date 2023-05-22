@@ -28,6 +28,18 @@ const miMixinGlobal = {
             let temperature = this.$store.state.estacion.temperature.value
             return temperature
         },
+        mostrarStreetAddressVuex() {
+            let streetAddress = this.$store.state.estacion.address.value.address.streetAddress;
+            return streetAddress;
+          },
+          mostrarAddressRegionVuex() {
+            let addressRegion = this.$store.state.estacion.address.value.address.addressRegion;
+            return addressRegion;
+          },
+          mostrarAddressLocalityVuex() {
+            let addressLocality = this.$store.state.estacion.address.value.address.addressLocality;
+            return addressLocality;
+          },
         mostrarDescripcionVuex() {
             let descripcion = this.$store.state.estacion.descripcion
             return descripcion
