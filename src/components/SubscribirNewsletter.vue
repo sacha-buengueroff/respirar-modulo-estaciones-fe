@@ -96,7 +96,7 @@
 
 
 .jumbotron {
-  background-image: url("../images/estacion-de-tarta-banoffee-800x533.jpg");
+  background-image: url("../images/portada2.jpg");
   color: white;
   background-size: cover;
   height: 100vh;

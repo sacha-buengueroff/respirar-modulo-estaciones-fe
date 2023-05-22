@@ -107,7 +107,7 @@ export default {
 
 <style scoped lang="css">
 .jumbotron {
-  background-image: url("../images/estacion-de-torta-oreo-800x534.jpg");
+  background-image: url("../images/portada2.jpg");
   color: white;
   background-size: cover;
   height: 75vh;

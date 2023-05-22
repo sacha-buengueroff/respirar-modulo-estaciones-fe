@@ -5,7 +5,27 @@ const miMixinGlobal = {
     },
     computed: {
         mostrarTituloVuex() {
-            let titulo = this.$store.state.estacion.titulo
+            let titulo = this.$store.state.estacion.ownerId.value
+            return titulo
+        },
+        mostrarpm1Vuex() {
+            let titulo = this.$store.state.estacion.pm1.value
+            return titulo
+        },
+        mostrarpm10Vuex() {
+            let titulo = this.$store.state.estacion.pm10.value
+            return titulo
+        },
+        mostrarpm25Vuex() {
+            let titulo = this.$store.state.estacion.pm25.value
+            return titulo
+        },
+        mostrarReliabilityVuex() {
+            let titulo = this.$store.state.estacion.reliability.value
+            return titulo
+        },
+        mostrarTemperatureVuex() {
+            let titulo = this.$store.state.estacion.temperature.value
             return titulo
         },
         mostrarDescripcionVuex() {
@@ -16,17 +36,9 @@ const miMixinGlobal = {
             let categoria = this.$store.state.estacion.categoria
             return categoria
         },
-        mostrarMomentoVuex() {
-            let momento = this.$store.state.estacion.momento
-            return momento
-        },
         mostrarEstacionVuex() {
             let estacion = this.$store.state.estacion
             return estacion
-        },
-        mostrarLikesVuex() {
-            let likes = this.$store.state.estacion.likes
-            return likes
         },
         mostrarIdVuex() {
             let id = this.$store.state.estacion._id

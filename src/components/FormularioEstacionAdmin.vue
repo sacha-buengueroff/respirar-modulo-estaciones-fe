@@ -123,7 +123,7 @@
                 <!-- -------------------------------------------- -->
                 <!--           CAMPO Tipo de conexion             -->
                 <!-- -------------------------------------------- -->
-                <div class="form-row">
+                <!-- <div class="form-row">
                   <div class="form-group col-md-4">
                     <validate tag="div">
                       <label for="tipoConexion">Tipo de conexion</label>
@@ -150,7 +150,7 @@
                       </field-messages>
                     </validate>
                   </div>
-                </div>
+                </div> -->
                 <button
                   class="btn btn-success my-3"
                   :disabled="formStateEstacion.$invalid"
@@ -248,7 +248,7 @@ export default {
 
 <style scoped lang="css">
 .jumbotron {
-  background-image: url("../images/estacion-de-tarta-banoffee-800x533.jpg");
+  background-image: url("../images/portada2.jpg");
   color: white;
   background-size: cover;
 }

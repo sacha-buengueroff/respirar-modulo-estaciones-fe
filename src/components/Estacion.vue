@@ -12,15 +12,29 @@
                       {{ mostrarTituloVuex }}
                     </h1>
                   </td>
+                </tr>
+                <tr>
                   <td>
                     <ul>
                       <li>
-                        <b>Categoría: </b>
-                        {{ mostrarCategoriaVuex }}
+                        <b>Temperature: </b>
+                        {{ mostrarTemperatureVuex }}
                       </li>
                       <li>
-                        <b>Momento: </b>
-                        {{ mostrarMomentoVuex }}
+                        <b>pm1: </b>
+                        {{ mostrarpm1Vuex }}
+                      </li>
+                      <li>
+                        <b>pm10: </b>
+                        {{ mostrarpm10Vuex }}
+                      </li>
+                      <li>
+                        <b>pm25: </b>
+                        {{ mostrarpm25Vuex }}
+                      </li>
+                      <li>
+                        <b>Reliability: </b>
+                        {{ mostrarReliabilityVuex }}
                       </li>
                     </ul>
                   </td>
@@ -142,24 +156,6 @@
             </td>
           </tr>
         </table>
-
-        <table class="table table-sm">
-          <thead>
-            <tr>
-              <th scope="col">Ingredientes</th>
-              <th scope="col">Cantidad</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              v-for="(ingrediente, index) in mostrarIngredientesVuex"
-              :key="index"
-            >
-              <td>{{ ingrediente.nombre | formatoIngrediente }}</td>
-              <td>{{ ingrediente.cantidad }}</td>
-            </tr>
-          </tbody>
-        </table>
         <p class="card-text">
           {{ mostrarDescripcionVuex }}
         </p>
@@ -194,7 +190,6 @@ export default {
     async enviarEstacion() {
       let estacion = {
         titulo: this.mostrarTituloVuex,
-        ingredientes: this.mostrarIngredientesVuex,
         descripcion: this.mostrarDescripcionVuex,
       };
       await this.axios.post(`${this.url}enviarEstacion/${this.email}`, estacion, {
@@ -208,7 +203,7 @@ export default {
 
 <style scoped lang="css">
 .jumbotron {
-  background-image: url("../images/estacion-de-torta-oreo-800x534.jpg");
+  background-image: url("../images/portada2.jpg");
   color: white;
   background-size: cover;
 }
