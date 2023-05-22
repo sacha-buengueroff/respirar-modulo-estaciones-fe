@@ -4,29 +4,29 @@ const miMixinGlobal = {
     methods: {
     },
     computed: {
-        mostrarTituloVuex() {
-            let titulo = this.$store.state.estacion.ownerId.value
-            return titulo
+        mostrarNombreVuex() {
+            let nombre = this.$store.state.estacion.ownerId.value
+            return nombre
         },
         mostrarpm1Vuex() {
-            let titulo = this.$store.state.estacion.pm1.value
-            return titulo
+            let pm1 = this.$store.state.estacion.pm1.value
+            return pm1
         },
         mostrarpm10Vuex() {
-            let titulo = this.$store.state.estacion.pm10.value
-            return titulo
+            let pm10 = this.$store.state.estacion.pm10.value
+            return pm10
         },
         mostrarpm25Vuex() {
-            let titulo = this.$store.state.estacion.pm25.value
-            return titulo
+            let pm25 = this.$store.state.estacion.pm25.value
+            return pm25
         },
         mostrarReliabilityVuex() {
-            let titulo = this.$store.state.estacion.reliability.value
-            return titulo
+            let reliability = this.$store.state.estacion.reliability.value
+            return reliability
         },
         mostrarTemperatureVuex() {
-            let titulo = this.$store.state.estacion.temperature.value
-            return titulo
+            let temperature = this.$store.state.estacion.temperature.value
+            return temperature
         },
         mostrarDescripcionVuex() {
             let descripcion = this.$store.state.estacion.descripcion

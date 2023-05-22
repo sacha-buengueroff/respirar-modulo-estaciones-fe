@@ -9,7 +9,7 @@
                 <tr>
                   <td>
                     <h1 class="card-title">
-                      {{ mostrarTituloVuex }}
+                      {{ mostrarNombreVuex }}
                     </h1>
                   </td>
                 </tr>
