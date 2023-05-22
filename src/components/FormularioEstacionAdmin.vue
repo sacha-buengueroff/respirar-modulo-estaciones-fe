@@ -2,7 +2,7 @@
   <section class="src-components-ingreso-gastos">
     <div class="jumbotron">
       <div class="cajaForm col-12">
-        <h2>Ingresa una estacion</h2>
+        <h2>Ingresa una estacion (ADMIN)</h2>
 
         <table class="container-fluid">
           <tr class="col-12">

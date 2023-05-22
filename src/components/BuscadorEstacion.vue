@@ -65,7 +65,7 @@ export default {
   },
   data() {
     return {
-      urlEstaciones: "https://635723ad9243cf412f93b0b0.mockapi.io/estaciones",
+      urlEstaciones: "http://localhost:8080/estaciones",
       nombreEstacion: "",
       estaciones: [],
       mostrarCard: false,
