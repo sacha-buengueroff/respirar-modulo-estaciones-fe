@@ -169,8 +169,7 @@
         <div
           class="jumbotron2"
           style="background-color: rgb(235, 255, 251); color: black"
-        >
-        </div>
+        ></div>
       </div>
     </div>
   </section>
@@ -200,7 +199,9 @@ export default {
     getInitialDataEstacion() {
       return {
         nombre: "",
-        tipoConexion: "",
+        streetAdress: "",
+        adressLocality: "",
+        adressRegion: "",
       };
     },
     async enviarEstacion() {
@@ -210,9 +211,19 @@ export default {
       this.datos = this.formDataEstacion;
       this.formDataEstacion = this.getInitialDataEstacion();
       this.formStateEstacion._reset();
+      let body = {
+        name: this.datos.nombre,
+        coordinates: [-38.6486495, -163.369692],
+        addStreet: this.datos.streetAdress,
+        addlocaly: this.datos.adressLocality,
+        addRegion: this.datos.adressRegion,
+        external: false,
+      };
       try {
-        let { data } = await this.axios.post(this.url, this.datos, {
-          "content-type": "application/json",
+        let { data } = await this.axios.post(this.url, body, {
+          headers: {
+            "Content-Type": "application/json",
+          },
         });
         let insertedId = data._id;
         this.datos.likes = 0;
@@ -240,7 +251,7 @@ export default {
       } catch (error) {
         console.log(error);
       }
-    }
+    },
   },
   computed: {},
 };

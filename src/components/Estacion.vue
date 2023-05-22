@@ -171,7 +171,7 @@ export default {
   mounted() {},
   data() {
     return {
-      url: "https://635723ad9243cf412f93b0b0.mockapi.io/estaciones",
+      url: "http://localhost:8080/estaciones",
       email: "",
     };
   },
