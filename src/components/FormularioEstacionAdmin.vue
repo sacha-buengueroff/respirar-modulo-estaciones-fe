@@ -120,6 +120,61 @@
                 </validate>
                 <br />
 
+                <!-- ----------------------------------- -->
+                <!--          CAMPO Coordenadas          -->
+                <!-- ----------------------------------- -->
+                <h1>Coordenadas</h1>
+
+                <!--            CAMPO Latitud           -->
+                <validate tag="div">
+                  <label for="latitud">Latitud</label>
+                  <input
+                    type="text"
+                    id="latitud"
+                    class="form-control"
+                    autocomplete="off"
+                    v-model="formDataEstacion.latitud"
+                    name="latitud"
+                    required
+                    :minlength="nombreMinLength"
+                  />
+                  <field-messages name="latitud" show="$dirty">
+                    <div slot="required" class="alert alert-danger mt-1">
+                      Campo requerido
+                    </div>
+                    <div slot="minlength" class="alert alert-danger mt-1">
+                      Este campo debe poseer al menos
+                      {{ nombreMinLength }} caracteres
+                    </div>
+                  </field-messages>
+                </validate>
+                <br />
+
+                <!--            CAMPO Longitud           -->
+                <validate tag="div">
+                  <label for="longitud">Longitud</label>
+                  <input
+                    type="text"
+                    id="longitud"
+                    class="form-control"
+                    autocomplete="off"
+                    v-model="formDataEstacion.longitud"
+                    name="longitud"
+                    required
+                    :minlength="nombreMinLength"
+                  />
+                  <field-messages name="longitud" show="$dirty">
+                    <div slot="required" class="alert alert-danger mt-1">
+                      Campo requerido
+                    </div>
+                    <div slot="minlength" class="alert alert-danger mt-1">
+                      Este campo debe poseer al menos
+                      {{ nombreMinLength }} caracteres
+                    </div>
+                  </field-messages>
+                </validate>
+                <br />
+
                 <!-- -------------------------------------------- -->
                 <!--           CAMPO Tipo de conexion             -->
                 <!-- -------------------------------------------- -->
@@ -200,6 +255,8 @@ export default {
         streetAdress: "",
         adressLocality: "",
         adressRegion: "",
+        longitud: "",
+        latitud: "",
       };
     },
     async enviarEstacion() {
@@ -211,7 +268,7 @@ export default {
       this.formStateEstacion._reset();
       let body = {
         name: this.datos.nombre,
-        coordinates: ["fddf", "fddf"],
+        coordinates: [this.datos.latitud, this.datos.longitud],
         addStreet: this.datos.streetAdress,
         addlocaly: this.datos.adressLocality,
         addRegion: this.datos.adressRegion,
