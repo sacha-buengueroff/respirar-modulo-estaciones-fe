@@ -211,7 +211,7 @@ export default {
       this.formStateEstacion._reset();
       let body = {
         name: this.datos.nombre,
-        coordinates: [],
+        coordinates: ["fddf", "fddf"],
         addStreet: this.datos.streetAdress,
         addlocaly: this.datos.adressLocality,
         addRegion: this.datos.adressRegion,
