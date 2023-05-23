@@ -31,14 +31,22 @@ const miMixinGlobal = {
         mostrarStreetAddressVuex() {
             let streetAddress = this.$store.state.estacion.address.value.address.streetAddress;
             return streetAddress;
-          },
-          mostrarAddressRegionVuex() {
+        },
+        mostrarAddressRegionVuex() {
             let addressRegion = this.$store.state.estacion.address.value.address.addressRegion;
             return addressRegion;
-          },
-          mostrarAddressLocalityVuex() {
+        },
+        mostrarAddressLocalityVuex() {
             let addressLocality = this.$store.state.estacion.address.value.address.addressLocality;
             return addressLocality;
+        },
+        mostrarLatitudVuex() {
+            let latitud = parseFloat(this.$store.state.estacion.location.value.coordinates[0]);
+            return latitud;
+          },
+          mostrarLongitudVuex() {
+            let longitud = parseFloat(this.$store.state.estacion.location.value.coordinates[1]);
+            return longitud;
           },
         mostrarDescripcionVuex() {
             let descripcion = this.$store.state.estacion.descripcion

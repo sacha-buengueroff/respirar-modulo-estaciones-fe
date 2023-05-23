@@ -48,6 +48,16 @@
                         <b>Addres Region: </b>
                         {{ mostrarAddressRegionVuex }}
                       </li>
+                      <br>
+                      <h3>Coordenadas</h3>
+                      <li> 
+                        <b>Latitud: </b>
+                        {{ mostrarLatitudVuex }}
+                      </li>
+                      <li>
+                        <b>Longitud: </b>
+                        {{ mostrarLongitudVuex }}
+                      </li>
                     </ul>
                   </td>
                 </tr>
