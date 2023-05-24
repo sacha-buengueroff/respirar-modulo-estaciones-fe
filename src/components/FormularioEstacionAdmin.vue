@@ -234,9 +234,6 @@
 export default {
   name: "src-components-formulario-estacion",
   props: [],
-  async beforeMount() {
-    await this.getOptions();
-  },
   data() {
     return {
       formDataEstacion: this.getInitialDataEstacion(),
@@ -293,19 +290,6 @@ export default {
     },
     mostrarEstacion() {
       return this.formDataEstacion.nombre != "";
-    },
-    async getOptions() {
-      try {
-        let res = await this.axios(this.url);
-        let estaciones = res.data;
-        let tipoConexiones = estaciones.map(
-          (estacion) => estacion.tipoConexion
-        );
-        tipoConexiones = [...new Set(tipoConexiones)];
-        this.options = { tipoConexiones };
-      } catch (error) {
-        console.log(error);
-      }
     },
   },
   computed: {},
