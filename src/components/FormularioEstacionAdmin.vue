@@ -286,6 +286,8 @@ export default {
         this.datos._id = insertedId;
         console.log(JSON.stringify(this.datos, null, 4));
         this.$store.dispatch("modificarEstacion", this.datos);
+        console.log("Vuex");
+        console.log(this.$store.state.estacion);
         this.$router.push("/estacion");
       } catch (error) {
         console.log(error);
