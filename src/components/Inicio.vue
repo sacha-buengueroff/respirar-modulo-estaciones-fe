@@ -43,11 +43,11 @@
   </div>
   <h1 class="titulo"><span>Sobre nosotros...</span></h1>
   <div class="media my-5 w-75 mx-auto">
-  <img src="../images/Respirar.png" class="align-self-center mr-3 imagenNosotros" alt="...">
+  <img src="../images/13.png" class="align-self-center mr-5 imagenNosotros" alt="...">
   <div class="media-body mt-5">
     <h5 class="mt-0">Sobre Respirar</h5>
-    <p>En Respirar, aca va un texto muy largo para explicar porque tenemos los mejores sensores! ahora voy a repetir esto un par de veces.En Respirar, aca va un texto muy largo para explicar porque tenemos los mejores sensores! ahora voy a repetir esto un par de veces.</p>
-    <p>ahora voy a repetir esto un par de veces.En Respirar, aca va un texto muy largo para explicar porque tenemos los mejores sensores!  </p>
+    <p>El Instituto Ciudades del Futuro (ICF) lanzó RespirAR, una solución tecnológica compuesta por estaciones de medición de calidad del aire que analizan su estado, permitiendo así estudiar su evolución a lo largo del tiempo. A partir de un acuerdo de cooperación celebrado entre Argentina y España, se promueve el desarrollo de una plataforma nacional, con el fin de observar posibles procesos climáticos en el territorio argentino. </p>
+    <p>Vale destacar, que esta plataforma permite que cualquiera pueda configurar su propia estación y comenzar a enviar datos desde su casa, con solo unos pocos pasos.</p>
   </div>
 </div>
 <h1 class="titulo"><span>Estaciones fáciles, que nunca fallan!</span></h1>
@@ -135,9 +135,9 @@ export default {
 <style scoped lang="css">
 
 .imagenNosotros{
-  width: 40%!important;
-  margin-left: -80px;
-  margin-top: -90px;
+  width: 35%!important;
+  margin-left: -90px;
+  margin-top: -40px;
 }
 .carousel{
   opacity: 50%;
