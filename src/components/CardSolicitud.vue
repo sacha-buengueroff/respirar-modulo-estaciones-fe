@@ -1,7 +1,7 @@
 <template>
   <div class="card cardHover">
     <div class="card-body">
-      <h2 class="card-title" @click="mostrarSolicitud()">
+      <h2 class="card-title">
         {{ solicitud.name }}
       </h2>
       <table class="table table-sm">
@@ -59,11 +59,6 @@ export default {
     };
   },
   methods: {
-    mostrarSolicitud() {
-      this.$store.dispatch("modificarSolicitud", this.solicitud);
-      console.log(this.solicitud);
-      this.$router.push("/solicitud");
-    },
     getInitialSolicitud() {
       return {
         name: this.solicitud.name,
