@@ -77,7 +77,6 @@ export default {
         let res = await this.axios(this.urlEstaciones);
         let estaciones = res.data;
         this.estaciones = estaciones;
-        console.log(estaciones);
       } catch (error) {
         console.error(error);
       }
