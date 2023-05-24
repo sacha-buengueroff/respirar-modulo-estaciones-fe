@@ -100,7 +100,6 @@ export default {
         let { data: res } = await this.axios.post(this.url, this.datos, {
           "content-type": "application/json",
         });
-        console.log(res);
         if (res.permiso == "concedido") {
           this.$store.dispatch("loginUsuario", {
             username: this.datos.username,

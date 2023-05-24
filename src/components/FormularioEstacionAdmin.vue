@@ -280,18 +280,18 @@ export default {
             "Content-Type": "application/json",
           },
         });
-        let insertedId = data._id;
-        this.datos.likes = 0;
-        console.log(insertedId);
-        this.datos._id = insertedId;
         console.log(JSON.stringify(this.datos, null, 4));
-        this.$store.dispatch("modificarEstacion", this.datos);
-        console.log("Vuex");
+        let estacion = await this.getEstacion(data.id)
+        this.$store.dispatch("modificarEstacion", estacion.data);
+        console.log("vuex");
         console.log(this.$store.state.estacion);
         this.$router.push("/estacion");
       } catch (error) {
         console.log(error);
       }
+    },
+    async getEstacion(id) {
+      return await this.axios.get(this.url + "/" + id)
     },
     mostrarEstacion() {
       return this.formDataEstacion.nombre != "";
