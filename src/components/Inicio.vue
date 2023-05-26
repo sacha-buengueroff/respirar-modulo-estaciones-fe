@@ -18,7 +18,7 @@
           />
         </div>
         <div class="carousel-item">
-          <img src="../images/portada3.jpg" class="d-block w-100" alt="..." />
+          <img src="../images/Aire-Puro_1.jpg" class="d-block w-100" alt="..." />
         </div>
       </div>
       <button
@@ -50,68 +50,71 @@
     <p>Vale destacar, que esta plataforma permite que cualquiera pueda configurar su propia estación y comenzar a enviar datos desde su casa, con solo unos pocos pasos.</p>
   </div>
 </div>
-<h1 class="titulo"><span>Estaciones fáciles, que nunca fallan!</span></h1>
+<h1 class="titulo"><span>¡Últimas novedades!</span></h1>
 
 <div class="card-columns my-5 w-75 mx-auto">
   <div class="card">
-    <img src="../images/estacion-de-tarta-banoffee-800x533.jpg" class="card-img-top" alt="...">
+    <img src="../images/WhatsApp-Image-2022-04-19-at-10.42.59-AM-1-833x1024.jpeg" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Torta Banoffee tradicional, un antes y después en tus postres</h5>
-      <p class="card-text">Hoy les presentamos la estacion de la famosa Tarta Banoffee de plátano o banana, por fuera parece ser super sofisticada pero realmente van a ver que es una pavada, ya que nosotros le vamos a encontrar la vuelta y la hacemos en un toque.</p>
+      <h5 class="card-title">Plataforma RespirAR sigue avanzando</h5>
+      <p class="card-text">La Universidad Nacional de La Plata, a través de LINTI – Laboratorio de Investigación en Nuevas Tecnologías Informáticas comenzó a trabajar en el proceso de diseño y puesta en marcha del primer prototipo de la plataforma.</p>
     </div>
   </div>
   <div class="card p-3">
     <blockquote class="blockquote mb-0 card-body">
-      <p>Cuando comes algo y tu paladar te dice lo que falta, ahí es cuando empiezas a combinar.</p>
+      <p>Si supiera que el mundo se acaba mañana, yo, hoy todavía plantaría un árbol.</p>
       <footer class="blockquote-footer">
         <small class="text-muted">
-          Justin Quek <cite title="Source Title">The Gourmet Journal</cite>
+          M. L. King <cite title="Source Title">Ministro y activista bautista estadounidense</cite>
         </small>
       </footer>
     </blockquote>
   </div>
   <div class="card">
-    <img src="../images/estacion-de-torta-oreo-800x534.jpg" class="card-img-top" alt="...">
+    <img src="../images/fasta-3-1024x474.png" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">Cómo hacer una Torta Oreo fácil</h5>
-      <p class="card-text">La Torta Oreo nos encanta a todos por su ingrediente principal que son las galletitas de chocolate siempre presentes para hacer postres deliciosos. Haceme caso y tené a mano esta estacion, tus tardes de frío te lo van a agradecer.</p>
+      <h5 class="card-title">El ICF presentó RespirAR</h5>
+      <p class="card-text">El Instituto Ciudades del Futuro (ICF) lanzó RespirAR, una solución tecnológica compuesta por estaciones de medición de calidad del aire que analizan su estado, permitiendo así estudiar su evolución a lo largo del tiempo.</p>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
   </div>
   <div class="card bg-primary text-white text-center p-3">
     <blockquote class="blockquote mb-0">
-      <p>Una estacion no tiene alma. Es el cocinero quien debe darle alma a la estacion.</p>
+      <p>"La Tierra proporciona lo suficiente para satisfacer las necesidades de cada ser humano, pero no la de su codicia"</p>
       <footer class="blockquote-footer text-white">
         <small>
-          Thomas Keller <cite title="Source Title">The Gourmet Journal</cite>
+          Mahatma Gandhi  <cite title="Source Title">Abogado y activista hindú</cite>
         </small>
       </footer>
     </blockquote>
   </div>
   <div class="card text-center">
     <div class="card-body">
-      <h5 class="card-title">Babé, babé.</h5>
-      <p class="card-text">Cómo hacer huevos revueltos (¡y que queden bien!)</p>
+      <h5 class="card-title">¿A donde vamos?</h5>
+      <p class="card-text">“Vivimos en la Tierra como si tuviéramos otra a la que ir”</p>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
   </div>
   <div class="card">
-    <img src="../images/images (3).jpg" class="card-img" alt="...">
+    <img src="../images/respirar2.png" class="card-img" alt="...">
   </div>
   <div class="card p-3 text-right">
     <blockquote class="blockquote mb-0">
-      <p>El descubrimiento de un nuevo plato es de más provecho para la humanidad que el descubrimiento de una estrella.</p>
+      <p>“Cualquier cosa en la que estés interesado no ocurrirá si no puedes respirar o beber”</p>
       <footer class="blockquote-footer">
         <small class="text-muted">
-          Jean Anthelme Brillat-Savarin <cite title="Source Title">New York times</cite>
+          C. Sagan <cite title="Source Title">Astrofísico y divulgador científico estadounidense.</cite>
         </small>
       </footer>
     </blockquote>
   </div>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Vas a sufrir y te vas a olvidar.</h5>
-      <p class="card-text">Masa para ravioles caseros paso a paso</p>
+      <h5 class="card-title">¿Cual es tu realidad?</h5>
+      <p class="card-text"><i> La suprema realidad de nuestro tiempo es la vulnerabilidad de nuestro planeta.</i></p>
+      <small class="text-muted">
+        J. F. Kennedy
+        </small>
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
   </div>
