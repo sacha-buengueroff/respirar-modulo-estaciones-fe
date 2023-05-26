@@ -13,6 +13,10 @@
         </thead>
         <tbody>
           <tr>
+            <td>Email</td>
+            <td>{{ solicitud.email }}</td>
+          </tr>
+          <tr>
             <td>Street Address</td>
             <td>{{ solicitud.addStreet }}</td>
           </tr>
@@ -53,48 +57,30 @@ export default {
       datos: null,
       habilitacion: null,
       url: "http://localhost:8080/solicitudes",
-      urlEstaciones: "http://localhost:8080/estaciones",
-      formDataSolicitud: this.getInitialDataSolicitud(),
-      formStateSolicitud: {},
+      urlEstaciones: "http://localhost:8080/estaciones/",
     };
   },
   methods: {
-    getInitialSolicitud() {
-      return {
-        name: this.solicitud.name,
-        streetAdress: this.solicitud.addStreet,
-        adressLocality: this.solicitud.addLocaly,
-        adressRegion: this.solicitud.addRegion,
-        coordinates: [this.solicitud.coordinates[0], this.solicitud.coordinates[1]]
-      };
-    },
     async enviarSolicitud() {
-      let name = this.formDataSolicitud.name;
-      name = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
-      this.formDataSolicitud.name = name;
-      this.datos = this.formDataSolicitud;
-      this.formDataSolicitud = this.getInitialDataSolicitud();
-      this.formStateSolicitud._reset();
       let body = {
-        name: this.datos.name,
-        coordinates: [this.datos.latitud, this.datos.longitud],
-        addStreet: this.datos.streetAdress,
-        addlocaly: this.datos.adressLocality,
-        addRegion: this.datos.adressRegion,
+        name: this.solicitud.name,
+        coordinates: [this.solicitud.coordinates[0], this.solicitud.coordinates[1]],
+        addStreet: this.solicitud.addStreet,
+        addLocaly: this.solicitud.addLocaly,
+        addRegion: this.solicitud.addRegion,
         external: true,
+        email: this.solicitud.email
       };
+      console.log("body");
+      console.log(body)
       try {
         let { data } = await this.axios.post(this.urlEstaciones, body, {
           headers: {
             "Content-Type": "application/json",
           },
-        });
-        let insertedId = data._id;
-        this.datos.likes = 0;
-        console.log(insertedId);
-        this.datos._id = insertedId;
-        console.log(JSON.stringify(this.datos, null, 4));
-        this.$store.dispatch("modificarEstacion", this.datos);
+        });   
+        this.datos = await this.axios.get(this.urlEstaciones + data.id)
+        this.$store.dispatch("modificarEstacion", this.datos.data);
         this.$router.push("/estacion");
       } catch (error) {
         console.log(error);

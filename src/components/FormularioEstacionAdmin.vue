@@ -241,7 +241,7 @@ export default {
       datos: null,
       nombreMinLength: 3,
       presupuesto: "",
-      url: "http://localhost:8080/estaciones",
+      url: "http://localhost:8080/estaciones/",
       options: [],
     };
   },
@@ -253,7 +253,7 @@ export default {
         adressLocality: "",
         adressRegion: "",
         longitud: "",
-        latitud: "",
+        latitud: ""
       };
     },
     async enviarEstacion() {
@@ -267,7 +267,7 @@ export default {
         name: this.datos.nombre,
         coordinates: [this.datos.latitud, this.datos.longitud],
         addStreet: this.datos.streetAdress,
-        addlocaly: this.datos.adressLocality,
+        addLocaly: this.datos.adressLocality,
         addRegion: this.datos.adressRegion,
         external: false,
       };
@@ -277,12 +277,8 @@ export default {
             "Content-Type": "application/json",
           },
         });
-        let insertedId = data._id;
-        this.datos.likes = 0;
-        console.log(insertedId);
-        this.datos._id = insertedId;
-        console.log(JSON.stringify(this.datos, null, 4));
-        this.$store.dispatch("modificarEstacion", this.datos);
+        this.datos = await this.axios.get(this.url + data.id)
+        this.$store.dispatch("modificarEstacion", this.datos.data);
         this.$router.push("/estacion");
       } catch (error) {
         console.log(error);

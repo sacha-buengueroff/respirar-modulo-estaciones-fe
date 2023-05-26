@@ -121,6 +121,33 @@
                 <br />
 
                 <!-- ----------------------------------- -->
+                <!--              CAMPO EMAIL            -->
+                <!-- ----------------------------------- -->
+                <validate tag="div">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    class="form-control"
+                    autocomplete="off"
+                    v-model="formDataEstacion.email"
+                    name="email"
+                    required
+                    :minlength="nombreMinLength"
+                  />
+                  <field-messages name="email" show="$dirty">
+                    <div slot="required" class="alert alert-danger mt-1">
+                      Campo requerido
+                    </div>
+                    <div slot="minlength" class="alert alert-danger mt-1">
+                      Este campo debe poseer al menos
+                      {{ nombreMinLength }} caracteres
+                    </div>
+                  </field-messages>
+                </validate>
+                <br />
+
+                <!-- ----------------------------------- -->
                 <!--          CAMPO Coordenadas          -->
                 <!-- ----------------------------------- -->
                 <h1>Coordenadas</h1>
@@ -226,6 +253,7 @@ export default {
         adressRegion: "",
         longitud: "",
         latitud: "",
+        email: "",
       };
     },
     async enviarEstacion() {
@@ -239,9 +267,10 @@ export default {
         name: this.datos.nombre,
         coordinates: [this.datos.latitud, this.datos.longitud],
         addStreet: this.datos.streetAdress,
-        addlocaly: this.datos.adressLocality,
+        addLocaly: this.datos.adressLocality,
         addRegion: this.datos.adressRegion,
-        external: false,
+        external: true,
+        email: this.datos.email
       };
       try {
         let { data } = await this.axios.post(this.url, body, {
@@ -253,7 +282,7 @@ export default {
         this.datos._id = insertedId;
         console.log(JSON.stringify(this.datos, null, 4));
         this.$store.dispatch("modificarEstacion", this.datos);
-        this.$router.push("/estacion");
+        this.$router.push("/estaciones");
       } catch (error) {
         console.log(error);
       }

@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-import FormularioEstacion from "./components/FormularioEstacion.vue";
+import FormularioSolicitud from "./components/FormularioSolicitud.vue";
 import BuscadorEstacion from "./components/BuscadorEstacion.vue";
 import Inicio from "./components/Inicio.vue";
 import Estacion from "./components/Estacion.vue";
@@ -18,7 +18,7 @@ export const router = new VueRouter({
   routes: [
     { path: "/", component: Inicio },
     { path: "/estaciones", component: BuscadorEstacion },
-    { path: "/formulario-estacion", component: FormularioEstacion },
+    { path: "/formulario-solicitud", component: FormularioSolicitud },
     { path: "/formulario-estacion-admin", component: FormularioEstacionAdmin },
     { path: "/estacion", component: Estacion },
     { path: "/login", component: LoginUsuario },

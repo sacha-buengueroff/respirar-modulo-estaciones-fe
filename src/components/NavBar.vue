@@ -35,7 +35,7 @@
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/formulario-estacion">
+            <router-link to="/formulario-solicitud">
               <a class="nav-link" href="#">Solicita agregar tu Estacion</a>
             </router-link>
           </li>
