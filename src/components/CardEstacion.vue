@@ -118,10 +118,10 @@ export default {
 .card:hover {
   color: white;
   background-color: #4b9960;
-  transform: scale(1.03);
+  transform: scale(1.01);
   transition: all linear 200ms;
   z-index: 1;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   box-shadow: 3px 3px 10px rgba(0,0,0,.3);
   cursor: pointer;
 }

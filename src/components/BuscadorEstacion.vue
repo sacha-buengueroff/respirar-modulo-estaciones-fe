@@ -112,12 +112,13 @@ export default {
   height: 75vh;
   padding: 2rem 2rem!important;
   margin-bottom: 0px!important;
+  border-radius: 0px!important;
 }
 
 .jumbotron2 {
   padding: 30px 10px;
   background: rgb(255,255,255);
-background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(75,153,96,1) 67%, rgba(67,105,77,1) 100%);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(75,153,96,1) 67%, rgba(67,105,77,1) 100%);
   color: white;
   background-size: cover;
 }
