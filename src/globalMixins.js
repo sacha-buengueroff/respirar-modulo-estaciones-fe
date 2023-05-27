@@ -48,14 +48,6 @@ const miMixinGlobal = {
             let longitud = parseFloat(this.$store.state.estacion.location.value.coordinates[1]);
             return longitud;
           },
-        mostrarDescripcionVuex() {
-            let descripcion = this.$store.state.estacion.descripcion
-            return descripcion
-        },
-        mostrarCategoriaVuex() {
-            let categoria = this.$store.state.estacion.categoria
-            return categoria
-        },
         mostrarEstacionVuex() {
             let estacion = this.$store.state.estacion
             return estacion

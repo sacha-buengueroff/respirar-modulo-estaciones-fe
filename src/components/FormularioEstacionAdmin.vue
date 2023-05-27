@@ -234,9 +234,6 @@
 export default {
   name: "src-components-formulario-estacion",
   props: [],
-  async beforeMount() {
-    await this.getOptions();
-  },
   data() {
     return {
       formDataEstacion: this.getInitialDataEstacion(),
@@ -244,7 +241,7 @@ export default {
       datos: null,
       nombreMinLength: 3,
       presupuesto: "",
-      url: "http://localhost:8080/estaciones",
+      url: "http://localhost:8080/estaciones/",
       options: [],
     };
   },
@@ -256,7 +253,7 @@ export default {
         adressLocality: "",
         adressRegion: "",
         longitud: "",
-        latitud: "",
+        latitud: ""
       };
     },
     async enviarEstacion() {
@@ -270,7 +267,7 @@ export default {
         name: this.datos.nombre,
         coordinates: [this.datos.latitud, this.datos.longitud],
         addStreet: this.datos.streetAdress,
-        addlocaly: this.datos.adressLocality,
+        addLocaly: this.datos.adressLocality,
         addRegion: this.datos.adressRegion,
         external: false,
       };
@@ -280,11 +277,8 @@ export default {
             "Content-Type": "application/json",
           },
         });
-        console.log(JSON.stringify(this.datos, null, 4));
-        let estacion = await this.getEstacion(data.id)
-        this.$store.dispatch("modificarEstacion", estacion.data);
-        console.log("vuex");
-        console.log(this.$store.state.estacion);
+        this.datos = await this.axios.get(this.url + data.id)
+        this.$store.dispatch("modificarEstacion", this.datos.data);
         this.$router.push("/estacion");
       } catch (error) {
         console.log(error);
@@ -295,19 +289,6 @@ export default {
     },
     mostrarEstacion() {
       return this.formDataEstacion.nombre != "";
-    },
-    async getOptions() {
-      try {
-        let res = await this.axios(this.url);
-        let estaciones = res.data;
-        let tipoConexiones = estaciones.map(
-          (estacion) => estacion.tipoConexion
-        );
-        tipoConexiones = [...new Set(tipoConexiones)];
-        this.options = { tipoConexiones };
-      } catch (error) {
-        console.log(error);
-      }
     },
   },
   computed: {},

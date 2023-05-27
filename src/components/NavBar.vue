@@ -35,7 +35,7 @@
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/formulario-estacion">
+            <router-link to="/formulario-solicitud">
               <a class="nav-link" href="#">Solicita agregar tu Estacion</a>
             </router-link>
           </li>
@@ -44,15 +44,14 @@
               <a class="nav-link" href="#">Agrega tu Estacion</a>
             </router-link>
           </li>
+          <li class="nav-item">
+            <router-link to="/solicitudes">
+              <a class="nav-link" href="#">Solicitudes</a>
+            </router-link>
+          </li>
           <li class="nav-item" v-if="!usuarioLogeadoVuex">
             <router-link to="/newsletter">
               <a class="nav-link" href="#">Suscribirse al Newsletter</a>
-            </router-link>
-          </li>
-
-          <li class="nav-item" v-if="usuarioLogeadoVuex">
-            <router-link to="/formulario-estacion">
-              <a class="nav-link" href="#">Carga de estaciones</a>
             </router-link>
           </li>
         </ul>

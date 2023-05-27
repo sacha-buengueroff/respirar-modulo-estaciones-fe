@@ -178,9 +178,6 @@
             </td>
           </tr>
         </table>
-        <p class="card-text">
-          {{ mostrarDescripcionVuex }}
-        </p>
       </div>
     </div>
   </div>
@@ -208,16 +205,7 @@ export default {
       } catch (error) {
         console.log(error);
       }
-    },
-    async enviarEstacion() {
-      let estacion = {
-        titulo: this.mostrarTituloVuex,
-        descripcion: this.mostrarDescripcionVuex,
-      };
-      await this.axios.post(`${this.url}enviarEstacion/${this.email}`, estacion, {
-        "content-type": "application/json",
-      });
-    },
+    }
   },
   computed: {},
 };

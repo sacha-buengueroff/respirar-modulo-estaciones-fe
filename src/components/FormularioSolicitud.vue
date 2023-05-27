@@ -120,37 +120,88 @@
                 </validate>
                 <br />
 
-                <!-- -------------------------------------------- -->
-                <!--           CAMPO Tipo de conexion             -->
-                <!-- -------------------------------------------- -->
-                <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <validate tag="div">
-                      <label for="tipoConexion">Tipo de conexion</label>
-                      <select
-                        name="cateogria"
-                        id="tipoConexion"
-                        class="form-control"
-                        v-model="formDataEstacion.tipoConexion"
-                        required
-                      >
-                        <option
-                          v-for="(
-                            tipoConexion, index
-                          ) in options.tipoConexiones"
-                          :key="index"
-                        >
-                          {{ tipoConexion }}
-                        </option>
-                      </select>
-                      <field-messages name="tipoConexion" show="$dirty">
-                        <div slot="required" class="alert alert-danger mt-1">
-                          Campo requerido
-                        </div>
-                      </field-messages>
-                    </validate>
-                  </div>
-                </div>
+                <!-- ----------------------------------- -->
+                <!--              CAMPO EMAIL            -->
+                <!-- ----------------------------------- -->
+                <validate tag="div">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    class="form-control"
+                    autocomplete="off"
+                    v-model="formDataEstacion.email"
+                    name="email"
+                    required
+                    :minlength="nombreMinLength"
+                  />
+                  <field-messages name="email" show="$dirty">
+                    <div slot="required" class="alert alert-danger mt-1">
+                      Campo requerido
+                    </div>
+                    <div slot="minlength" class="alert alert-danger mt-1">
+                      Este campo debe poseer al menos
+                      {{ nombreMinLength }} caracteres
+                    </div>
+                  </field-messages>
+                </validate>
+                <br />
+
+                <!-- ----------------------------------- -->
+                <!--          CAMPO Coordenadas          -->
+                <!-- ----------------------------------- -->
+                <h1>Coordenadas</h1>
+
+                <!--            CAMPO Latitud           -->
+                <validate tag="div">
+                  <label for="latitud">Latitud</label>
+                  <input
+                    type="text"
+                    id="latitud"
+                    class="form-control"
+                    autocomplete="off"
+                    v-model="formDataEstacion.latitud"
+                    name="latitud"
+                    required
+                    :minlength="nombreMinLength"
+                  />
+                  <field-messages name="latitud" show="$dirty">
+                    <div slot="required" class="alert alert-danger mt-1">
+                      Campo requerido
+                    </div>
+                    <div slot="minlength" class="alert alert-danger mt-1">
+                      Este campo debe poseer al menos
+                      {{ nombreMinLength }} caracteres
+                    </div>
+                  </field-messages>
+                </validate>
+                <br />
+
+                <!--            CAMPO Longitud           -->
+                <validate tag="div">
+                  <label for="longitud">Longitud</label>
+                  <input
+                    type="text"
+                    id="longitud"
+                    class="form-control"
+                    autocomplete="off"
+                    v-model="formDataEstacion.longitud"
+                    name="longitud"
+                    required
+                    :minlength="nombreMinLength"
+                  />
+                  <field-messages name="longitud" show="$dirty">
+                    <div slot="required" class="alert alert-danger mt-1">
+                      Campo requerido
+                    </div>
+                    <div slot="minlength" class="alert alert-danger mt-1">
+                      Este campo debe poseer al menos
+                      {{ nombreMinLength }} caracteres
+                    </div>
+                  </field-messages>
+                </validate>
+                <br />
+
                 <button
                   class="btn btn-success my-3"
                   :disabled="formStateEstacion.$invalid"
@@ -189,10 +240,7 @@ export default {
       formStateEstacion: {},
       datos: null,
       nombreMinLength: 3,
-      limiteVerde: 1000,
-      limiteNaranja: 5000,
-      presupuesto: "",
-      url: "http://localhost:8080/estaciones",
+      url: "http://localhost:8080/solicitudes",
       options: [],
     };
   },
@@ -200,7 +248,12 @@ export default {
     getInitialDataEstacion() {
       return {
         nombre: "",
-        tipoConexion: "",
+        streetAdress: "",
+        adressLocality: "",
+        adressRegion: "",
+        longitud: "",
+        latitud: "",
+        email: "",
       };
     },
     async enviarEstacion() {
@@ -210,8 +263,17 @@ export default {
       this.datos = this.formDataEstacion;
       this.formDataEstacion = this.getInitialDataEstacion();
       this.formStateEstacion._reset();
+      let body = {
+        name: this.datos.nombre,
+        coordinates: [this.datos.latitud, this.datos.longitud],
+        addStreet: this.datos.streetAdress,
+        addLocaly: this.datos.adressLocality,
+        addRegion: this.datos.adressRegion,
+        external: true,
+        email: this.datos.email
+      };
       try {
-        let { data } = await this.axios.post(this.url, this.datos, {
+        let { data } = await this.axios.post(this.url, body, {
           "content-type": "application/json",
         });
         let insertedId = data._id;
@@ -219,7 +281,7 @@ export default {
         this.datos._id = insertedId;
         console.log(JSON.stringify(this.datos, null, 4));
         this.$store.dispatch("modificarEstacion", this.datos);
-        this.$router.push("/estacion");
+        this.$router.push("/estaciones");
       } catch (error) {
         console.log(error);
       }
@@ -227,19 +289,6 @@ export default {
     mostrarEstacion() {
       return this.formDataEstacion.nombre != "";
     },
-    async getOptions() {
-      try {
-        let res = await this.axios(this.url);
-        let estaciones = res.data;
-        let tipoConexiones = estaciones.map(
-          (estacion) => estacion.tipoConexion
-        );
-        tipoConexiones = [...new Set(tipoConexiones)];
-        this.options = { tipoConexiones };
-      } catch (error) {
-        console.log(error);
-      }
-    }
   },
   computed: {},
 };
