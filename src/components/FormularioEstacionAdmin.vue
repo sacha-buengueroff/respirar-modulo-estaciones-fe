@@ -284,6 +284,9 @@ export default {
         console.log(error);
       }
     },
+    async getEstacion(id) {
+      return await this.axios.get(this.url + "/" + id)
+    },
     mostrarEstacion() {
       return this.formDataEstacion.nombre != "";
     },

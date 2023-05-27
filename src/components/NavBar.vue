@@ -19,7 +19,7 @@
           <li class="nav-item logo">
             <router-link to="/">
               <a class="nav-link" href="#">
-                <img src="../images/7.png" alt="">
+                <img src="../images/14.png" alt="">
               </a>
             </router-link>
           </li>
@@ -99,10 +99,10 @@ export default {
 
 <style scoped lang="css">
 .nav-link img{
-  width: 190px;
+  width: 130px;
 }
 li a img{
-  margin-top: -82px!important;
+  margin-top: -52px!important;
   margin-right: 0px!important;
   margin-left: -10px;
 }
@@ -126,7 +126,7 @@ a:hover{
 button{
   background-color: #2f2f2f;
   border-color: #2f2f2f;
-  margin-top: -75px!important;
+  margin-top: -55px!important;
 }
 button:hover{
   background-color: #4B9960!important;

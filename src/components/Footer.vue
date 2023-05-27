@@ -8,7 +8,7 @@
                     <div class="col-lg-4">
                         
                         <h4>Sobre nosotros</h4>
-                        <p>En Respirar, aca va un texto muy largo para explicar porque tenemos los mejores sensores! ahora voy a repetir esto un par de veces.En Respirar, aca va un texto muy largo para explicar porque tenemos los mejores sensores! ahora voy a repetir esto un par de veces.En Respirar, aca va un texto muy largo para explicar porque tenemos los mejores sensores! ahora voy a repetir esto un par de veces.</p>
+                        <p>Somos RespirAR, una solución tecnológica compuesta por estaciones de medición de calidad del aire que analizan su estado, permitiendo así estudiar su evolución a lo largo del tiempo.</p>
 
                     </div>
 
@@ -37,7 +37,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-5">
-                        <p class="copyright text-uppercase">Copyright © 2022
+                        <p class="copyright text-uppercase">Copyright © 2023
                         </p>
                     </div>
                 </div>

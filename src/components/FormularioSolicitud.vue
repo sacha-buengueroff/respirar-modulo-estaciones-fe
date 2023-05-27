@@ -278,7 +278,6 @@ export default {
         });
         let insertedId = data._id;
         this.datos.likes = 0;
-        console.log(insertedId);
         this.datos._id = insertedId;
         console.log(JSON.stringify(this.datos, null, 4));
         this.$store.dispatch("modificarEstacion", this.datos);
