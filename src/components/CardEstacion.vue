@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="card cardHover"
-    
-  >
+  <div class="card cardHover">
     <div class="card-body">
       <h2 class="card-title" @click="mostrarEstacion()">
         {{ estacion.ownerId.value }}
@@ -64,34 +61,34 @@ export default {
   name: "src-components-card-estacion",
   props: ["estacion"],
   beforeMount() {
-    this.habilitacion = this.estacion.habilitado;
+    this.habilitacion = this.estacion.enable.value;
   },
   data() {
     return {
       datos: null,
       habilitacion: null,
-      url: "http://localhost:8080/estaciones"
+      url: "http://localhost:8080/estaciones/",
     };
   },
   methods: {
     mostrarEstacion() {
       this.$store.dispatch("modificarEstacion", this.estacion);
-      console.log(this.estacion)
+      console.log(this.estacion);
       this.$router.push("/estacion");
     },
-    /* async habilitarDeshabilitarEstacion(idEstacion) {
+    async habilitarDeshabilitarEstacion(idEstacion) {
       try {
-        //let url = this.url + idEstacion
-        if(this.habilitacion) {
-          //TODO: Aca va el metodo de deshabilitar
-        } else { 
-          //TODO: Aca va el metodo de habilitar
+        if (this.habilitacion) {
+          await this.axios.put(this.url + "suspenderEstacion/" + idEstacion);
+          this.habilitacion = false;
+        } else {
+          await this.axios.put(this.url + "habilitarEstacion/" + idEstacion);
+          this.habilitacion = true;
         }
+      } catch (error) {
+        console.log(error);
       }
-      catch(error) {
-        console.log(error)
-      }
-    }, */
+    },
   },
   computed: {
     habilitadoDeshabilitado() {
@@ -107,8 +104,7 @@ export default {
 </script>
 
 <style scoped  lang="css">
-
-.card{
+.card {
   border-radius: 8px;
   border: 1px solid #000000;
   padding: 5px;
@@ -122,11 +118,11 @@ export default {
   transition: all linear 200ms;
   z-index: 1;
   border: 1px solid #000000;
-  box-shadow: 3px 3px 10px rgba(0,0,0,.3);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
 
-.card:hover table{
+.card:hover table {
   color: white;
   transition: all linear 200ms;
 }
