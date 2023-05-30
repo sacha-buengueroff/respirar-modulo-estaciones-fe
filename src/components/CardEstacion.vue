@@ -33,7 +33,7 @@
             <td>{{ estacion.reliability.value }}</td>
           </tr>
           <tr>
-            <td>Tipo de conexión</td>
+            <td><b>Habilitar / Deshabilitar</b></td>
             <td>{{ estacion.tipoConexion }}</td>
           </tr>
           <tr>
