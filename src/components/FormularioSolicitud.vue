@@ -232,7 +232,6 @@ export default {
   name: "src-components-formulario-estacion",
   props: [],
   async beforeMount() {
-    await this.getOptions();
   },
   data() {
     return {
