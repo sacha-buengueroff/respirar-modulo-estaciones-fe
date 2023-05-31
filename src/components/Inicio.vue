@@ -163,7 +163,6 @@ export default {
 
 .card-img-top {
   width: 100%;
-  height: 200px !important; 
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
 }

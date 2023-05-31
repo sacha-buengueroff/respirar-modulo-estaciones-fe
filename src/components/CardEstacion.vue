@@ -2,7 +2,7 @@
   <div class="card cardHover">
     <div class="card-body">
       <h2 class="card-title" @click="mostrarEstacion()">
-        {{ estacion.ownerId.value }}
+        {{ mostrarSoloNombre(estacion.ownerId.value) }}
       </h2>
       <table class="table table-sm">
         <thead>
@@ -88,6 +88,11 @@ export default {
       } catch (error) {
         console.log(error);
       }
+    },
+
+    mostrarSoloNombre(ownerId) {
+      const splitArray = ownerId.split("ngsi-ld:");
+      return splitArray[1];
     },
   },
   computed: {
