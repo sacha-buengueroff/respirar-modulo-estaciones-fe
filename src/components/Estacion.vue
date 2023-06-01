@@ -195,7 +195,6 @@
 
 <script>
 import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
-import { mapActions } from "vuex";
 
 export default {
   name: "src-components-estacion",
@@ -228,7 +227,6 @@ export default {
         console.log(error);
       }
     },
-    ...mapActions(["mostrarLatitudVuex", "mostrarLongitudVuex"]),
   },
   computed: {},
 };
