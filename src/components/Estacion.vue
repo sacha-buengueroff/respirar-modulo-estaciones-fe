@@ -48,9 +48,9 @@
                         <b>Addres Region: </b>
                         {{ mostrarAddressRegionVuex }}
                       </li>
-                      <br>
+                      <br />
                       <h3>Coordenadas</h3>
-                      <li> 
+                      <li>
                         <b>Latitud: </b>
                         {{ mostrarLatitudVuex }}
                       </li>
@@ -178,17 +178,25 @@
             </td>
           </tr>
         </table>
-        <l-map style="height: 300px" :zoom="zoom" :center="markerLatLng">
-    <l-tile-layer :url="url2" :attribution="attribution"></l-tile-layer>
-    <l-marker :lat-lng="markerLatLng"></l-marker>
-  </l-map>
+        <l-map
+          style="height: 300px"
+          :zoom="zoom"
+          :center="[mostrarLatitudVuex, mostrarLongitudVuex]"
+        >
+          <l-tile-layer :url="url2" :attribution="attribution"></l-tile-layer>
+          <l-marker
+            :lat-lng="[mostrarLatitudVuex, mostrarLongitudVuex]"
+          ></l-marker>
+        </l-map>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
+import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
+import { mapActions } from "vuex";
+
 export default {
   name: "src-components-estacion",
   components: {
@@ -202,11 +210,10 @@ export default {
     return {
       url: "http://localhost:8080/estaciones",
       email: "",
-      url2: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      url2: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       attribution:
         '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       zoom: 15,
-      markerLatLng: [51.504, -0.159]
     };
   },
   methods: {
@@ -220,7 +227,8 @@ export default {
       } catch (error) {
         console.log(error);
       }
-    }
+    },
+    ...mapActions(["mostrarLatitudVuex", "mostrarLongitudVuex"]),
   },
   computed: {},
 };
