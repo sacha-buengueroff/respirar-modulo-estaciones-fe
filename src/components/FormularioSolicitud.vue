@@ -206,7 +206,7 @@
                   class="btn btn-success my-3"
                   :disabled="formStateEstacion.$invalid"
                 >
-                  Enviar estacion
+                  Enviar solicitud
                 </button>
               </vue-form>
             </td>
@@ -232,7 +232,6 @@ export default {
   name: "src-components-formulario-estacion",
   props: [],
   async beforeMount() {
-    await this.getOptions();
   },
   data() {
     return {
@@ -329,7 +328,7 @@ button {
   border-color: #2f2f2f !important;
 }
 button:hover {
-  background-color: #d9553b !important;
+  background-color: #4B9960 !important;
   transition: 0.5s;
   border-color: #2f2f2f;
 }

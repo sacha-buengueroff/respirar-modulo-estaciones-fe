@@ -178,20 +178,35 @@
             </td>
           </tr>
         </table>
+        <l-map style="height: 300px" :zoom="zoom" :center="markerLatLng">
+    <l-tile-layer :url="url2" :attribution="attribution"></l-tile-layer>
+    <l-marker :lat-lng="markerLatLng"></l-marker>
+  </l-map>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
 export default {
   name: "src-components-estacion",
+  components: {
+    LMap,
+    LTileLayer,
+    LMarker,
+  },
   props: [],
   mounted() {},
   data() {
     return {
       url: "http://localhost:8080/estaciones",
       email: "",
+      url2: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      attribution:
+        '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      zoom: 15,
+      markerLatLng: [51.504, -0.159]
     };
   },
   methods: {

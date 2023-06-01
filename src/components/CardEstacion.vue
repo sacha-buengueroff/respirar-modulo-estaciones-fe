@@ -2,8 +2,12 @@
   <div class="card cardHover">
     <div class="card-body">
       <h2 class="card-title" @click="mostrarEstacion()">
-        {{ estacion.ownerId.value }}
+        {{ mostrarId }}
       </h2>
+      <h4>
+        Owner Id: {{ mostrarSoloNombre }}
+      </h4>
+
       <table class="table table-sm">
         <thead>
           <tr>
@@ -13,24 +17,16 @@
         </thead>
         <tbody>
           <tr>
-            <td>Temperatura</td>
-            <td>{{ estacion.temperature.value }}</td>
+            <td>Street Address</td>
+            <td>{{ estacion.address.value.address.streetAddress }}</td>
           </tr>
           <tr>
-            <td>pm1</td>
-            <td>{{ estacion.pm1.value }}</td>
+            <td>Address Region</td>
+            <td>{{ estacion.address.value.address.addressRegion }}</td>
           </tr>
           <tr>
-            <td>pm10</td>
-            <td>{{ estacion.pm10.value }}</td>
-          </tr>
-          <tr>
-            <td>pm25</td>
-            <td>{{ estacion.pm25.value }}</td>
-          </tr>
-          <tr>
-            <td>Reliability</td>
-            <td>{{ estacion.reliability.value }}</td>
+            <td>Address Locality</td>
+            <td>{{ estacion.address.value.address.addressLocality }}</td>
           </tr>
           <tr>
             <td><b>Habilitar / Deshabilitar</b></td>
@@ -88,7 +84,7 @@ export default {
       } catch (error) {
         console.log(error);
       }
-    },
+    }
   },
   computed: {
     habilitadoDeshabilitado() {
@@ -98,6 +94,13 @@ export default {
         return "Deshabilitado";
       }
     },
+    mostrarId() {
+      return this.estacion.id.split("urn:ngsi-ld:")[1].split(":").join("")
+    },
+    mostrarSoloNombre() {
+      const splitArray = this.estacion.ownerId.value.split("ngsi-ld:");
+      return splitArray[1];
+    }
   },
   components: {},
 };

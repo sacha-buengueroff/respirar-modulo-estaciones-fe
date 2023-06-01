@@ -6,7 +6,8 @@ const miMixinGlobal = {
     computed: {
         mostrarNombreVuex() {
             let nombre = this.$store.state.estacion.ownerId.value
-            return nombre
+            const splitArray = nombre.split("ngsi-ld:");
+            return splitArray[1];            
         },
         mostrarpm1Vuex() {
             let pm1 = this.$store.state.estacion.pm1.value

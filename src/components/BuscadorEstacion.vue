@@ -18,6 +18,17 @@
                   placeholder="Nombre de estacion..."
                 />
               </td>
+              <td style="padding: 0px 20px 0px 0px" class="col-4">
+                <label for="usuario">Nombre Usuario</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="usuario"
+                  name="usuario"
+                  v-model.trim="nombreUsuario"
+                  placeholder="Nombre de usuario..."
+                />
+              </td>
             </tr>
           </table>
         </li>
@@ -39,9 +50,7 @@
             v-for="(estacion, index) in estacionesFiltradas"
             :key="index"
           >
-            <CardEstacion
-              :estacion="estacion"
-            />
+            <CardEstacion :estacion="estacion" />
           </div>
         </div>
       </div>
@@ -67,6 +76,7 @@ export default {
     return {
       urlEstaciones: "http://localhost:8080/estaciones",
       nombreEstacion: "",
+      nombreUsuario: "",
       estaciones: [],
       mostrarCard: false,
     };
@@ -81,14 +91,33 @@ export default {
         console.error(error);
       }
     },
+    idFormateado(id) {
+      const splitArray = id.split("urn:ngsi-ld:")[1].split(":").join("");
+      return splitArray;
+    },
+    soloNombre(nombre) {
+      const splitArray = nombre.split("ngsi-ld:");
+      return splitArray[1];
+    },
   },
   computed: {
     estacionesFiltradas() {
       let estacionesFiltradas = this.estaciones;
       if (this.nombreEstacion != "") {
-        estacionesFiltradas = estacionesFiltradas.filter((estacion) =>
-          estacion.ownerId.value.toLowerCase().includes(this.nombreEstacion)
-        );
+        estacionesFiltradas = estacionesFiltradas.filter((estacion) => {
+          let id = estacion.id;
+          return this.idFormateado(id)
+            .toLowerCase()
+            .includes(this.nombreEstacion.toLowerCase());
+        });
+      }
+      if (this.nombreUsuario != "") {
+        estacionesFiltradas = estacionesFiltradas.filter((estacion) => {
+          let nombre = estacion.ownerId.value;
+          return this.soloNombre(nombre)
+            .toLowerCase()
+            .includes(this.nombreUsuario.toLowerCase());
+        });
       }
       return estacionesFiltradas;
     },
@@ -109,16 +138,21 @@ export default {
   background-image: url("../images/portada2.jpg");
   color: white;
   background-size: cover;
-  height: 75vh;
-  padding: 2rem 2rem!important;
-  margin-bottom: 0px!important;
-  border-radius: 0px!important;
+  height: 40vh;
+  padding: 2rem 2rem !important;
+  margin-bottom: 0px !important;
+  border-radius: 0px !important;
 }
 
 .jumbotron2 {
   padding: 30px 10px;
-  background: rgb(255,255,255);
-  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(75,153,96,1) 67%, rgba(67,105,77,1) 100%);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(75, 153, 96, 1) 67%,
+    rgba(67, 105, 77, 1) 100%
+  );
   color: white;
   background-size: cover;
 }
