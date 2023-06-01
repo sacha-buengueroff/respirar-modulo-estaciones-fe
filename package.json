@@ -13,6 +13,7 @@
     "core-js": "^3.8.3",
     "i": "^0.3.7",
     "jquery": "^3.6.1",
+    "leaflet": "^1.9.4",
     "npm": "^8.19.2",
     "popper.js": "^1.16.1",
     "primeicons": "^6.0.1",
@@ -21,6 +22,7 @@
     "vue-axios": "^3.4.1",
     "vue-form": "^4.10.3",
     "vue-router": "^3.6.5",
+    "vue2-leaflet": "^2.7.1",
     "vuex": "^3.6.2"
   },
   "devDependencies": {
