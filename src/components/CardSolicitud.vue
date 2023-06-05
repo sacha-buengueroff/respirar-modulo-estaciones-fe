@@ -56,7 +56,7 @@ export default {
     return {
       datos: null,
       habilitacion: null,
-      url: "http://localhost:8080/solicitudes",
+      url: "http://localhost:8080/solicitudes/",
       urlEstaciones: "http://localhost:8080/estaciones/",
     };
   },
@@ -82,6 +82,7 @@ export default {
         this.datos = await this.axios.get(this.urlEstaciones + data.id)
         this.$store.dispatch("modificarEstacion", this.datos.data);
         this.$router.push("/estacion");
+        await this.axios.delete(this.url + this.solicitud._id);
       } catch (error) {
         console.log(error);
       }
