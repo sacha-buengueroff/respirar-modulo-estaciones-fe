@@ -138,7 +138,7 @@ export default {
   background-image: url("../images/portada2.jpg");
   color: white;
   background-size: cover;
-  height: 40vh;
+  height: 50vh;
   padding: 2rem 2rem !important;
   margin-bottom: 0px !important;
   border-radius: 0px !important;
