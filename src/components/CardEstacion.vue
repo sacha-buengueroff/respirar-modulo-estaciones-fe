@@ -70,7 +70,7 @@ export default {
     mostrarEstacion() {
       this.$store.dispatch("modificarEstacion", this.estacion);
       console.log(this.estacion);
-      this.$router.push("/estacion");
+      this.$router.push(`/estacion/${this.estacion.id}`);
     },
     async habilitarDeshabilitarEstacion(idEstacion) {
       try {

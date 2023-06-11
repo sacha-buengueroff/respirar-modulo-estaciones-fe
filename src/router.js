@@ -20,7 +20,7 @@ export const router = new VueRouter({
     { path: "/estaciones", component: BuscadorEstacion },
     { path: "/formulario-solicitud", component: FormularioSolicitud },
     { path: "/formulario-estacion-admin", component: FormularioEstacionAdmin },
-    { path: "/estacion", component: Estacion },
+    { path: "/estacion/:id", component: Estacion },
     { path: "/login", component: LoginUsuario },
     { path: "/modificar", component: ModificarEstacion },
     { path: "/newsletter", component: SubscribirNewsletter },

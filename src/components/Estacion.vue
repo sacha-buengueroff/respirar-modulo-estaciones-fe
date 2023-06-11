@@ -9,7 +9,7 @@
                 <tr>
                   <td>
                     <h1 class="card-title">
-                      {{ mostrarNombreVuex }}
+                      {{ mostrarNombre }}
                     </h1>
                   </td>
                 </tr>
@@ -18,45 +18,45 @@
                     <ul>
                       <li>
                         <b>Temperature: </b>
-                        {{ mostrarTemperatureVuex }}
+                        {{ mostrarTemperature }}
                       </li>
                       <li>
                         <b>pm1: </b>
-                        {{ mostrarpm1Vuex }}
+                        {{ mostrarpm1 }}
                       </li>
                       <li>
                         <b>pm10: </b>
-                        {{ mostrarpm10Vuex }}
+                        {{ mostrarpm10 }}
                       </li>
                       <li>
                         <b>pm25: </b>
-                        {{ mostrarpm25Vuex }}
+                        {{ mostrarpm25 }}
                       </li>
                       <li>
                         <b>Reliability: </b>
-                        {{ mostrarReliabilityVuex }}
+                        {{ mostrarReliability }}
                       </li>
                       <li>
                         <b>Street Address: </b>
-                        {{ mostrarStreetAddressVuex }}
+                        {{ mostrarStreetAddress }}
                       </li>
                       <li>
                         <b>Address Locality: </b>
-                        {{ mostrarAddressLocalityVuex }}
+                        {{ mostrarAddressLocality }}
                       </li>
                       <li>
                         <b>Addres Region: </b>
-                        {{ mostrarAddressRegionVuex }}
+                        {{ mostrarAddressRegion }}
                       </li>
                       <br />
                       <h3>Coordenadas</h3>
                       <li>
                         <b>Latitud: </b>
-                        {{ mostrarLatitudVuex }}
+                        {{ mostrarLatitud }}
                       </li>
                       <li>
                         <b>Longitud: </b>
-                        {{ mostrarLongitudVuex }}
+                        {{ mostrarLongitud }}
                       </li>
                     </ul>
                   </td>
@@ -181,11 +181,11 @@
         <l-map
           style="height: 300px"
           :zoom="zoom"
-          :center="[mostrarLatitudVuex, mostrarLongitudVuex]"
+          :center="[mostrarLatitud, mostrarLongitud]"
         >
           <l-tile-layer :url="url2" :attribution="attribution"></l-tile-layer>
           <l-marker
-            :lat-lng="[mostrarLatitudVuex, mostrarLongitudVuex]"
+            :lat-lng="[mostrarLatitud, mostrarLongitud]"
           ></l-marker>
         </l-map>
       </div>
@@ -204,21 +204,27 @@ export default {
     LMarker,
   },
   props: [],
-  mounted() {},
+  async beforeMount() {
+    console.log(`${this.url}${this.$route.params.id}`);
+    let estacion = await this.axios(`${this.url}${this.$route.params.id}`)
+    console.log(estacion.data);
+    this.estacion = estacion.data
+  },
   data() {
     return {
-      url: "http://localhost:8080/estaciones",
+      url: "http://localhost:8080/estaciones/",
       email: "",
       url2: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       attribution:
         '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       zoom: 15,
+      estacion: null
     };
   },
   methods: {
     async eliminarEstacion() {
       try {
-        await this.axios.delete(`${this.url}${this.mostrarIdVuex}`, {
+        await this.axios.delete(`${this.url}${this.mostrarId}`, {
           "content-type": "application/json",
         });
         this.$store.dispatch("modificarEstacion", {});
@@ -228,7 +234,108 @@ export default {
       }
     },
   },
-  computed: {},
+  computed: {
+    mostrarNombre() {
+      if (this.estacion) {
+        let id = this.estacion.id
+        const splitArray = id.split("urn:ngsi-ld:")[1].split(":").join("");
+        return splitArray;            
+      }
+      else {
+        return ""
+      }
+    },
+    mostrarpm1() {
+      if (this.estacion) {
+        let pm1 = this.estacion.pm1.value
+        return pm1
+      }
+      else {
+        return ""
+      }
+    },
+    mostrarpm10() {
+      if (this.estacion) {
+        let pm10 = this.estacion.pm10.value
+        return pm10
+      }
+      else {
+        return ""
+      }
+    },
+    mostrarpm25() {
+      if (this.estacion) {
+        let pm25 = this.estacion.pm25.value
+        return pm25
+      }
+      else {
+        return ""
+      }
+    },
+    mostrarReliability() {
+      if (this.estacion) {
+        let reliability = this.estacion.reliability.value
+        return reliability
+      }
+      else {
+        return ""
+      }
+    },
+    mostrarTemperature() {
+      if (this.estacion) {
+        let temperature = this.estacion.temperature.value
+        return temperature
+      }
+      else {
+        return ""
+      }
+    },
+    mostrarStreetAddress() {
+      if (this.estacion) {
+        let streetAddress = this.estacion.address.value.address.streetAddress;
+        return streetAddress;
+      }
+      else {
+        return ""
+      }
+    },
+    mostrarAddressRegion() {
+      if (this.estacion) {
+        let addressRegion = this.estacion.address.value.address.addressRegion;
+        return addressRegion;
+      }
+      else {
+        return ""
+      }
+    },
+    mostrarAddressLocality() {
+      if (this.estacion) {
+        let addressLocality = this.estacion.address.value.address.addressLocality;
+        return addressLocality;
+      }
+      else {
+        return ""
+      }
+    },
+    mostrarLatitud() {
+      if (this.estacion) {
+        let latitud = parseFloat(this.estacion.location.value.coordinates[0]);
+        return latitud;
+      }
+      else {
+        return ""
+      }
+      },
+    mostrarLongitud() {
+      if (this.estacion) {
+        let longitud = parseFloat(this.estacion.location.value.coordinates[1]);
+        return longitud;
+      }
+      else {
+        return ""
+      }
+    }
+  },
 };
 </script>
 
