@@ -40,6 +40,9 @@
             <td colspan="2">
               <button class="btn btn-success my-3" @click="enviarSolicitud()">Aprobar solicitud</button>
             </td>
+            <td colspan="2">
+              <button class="btn btn-danger my-3" @click="eliminarSolicitud()">Rechazar solicitud</button>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -71,7 +74,6 @@ export default {
         external: true,
         email: this.solicitud.email
       };
-      console.log("body");
       console.log(body)
       try {
         let { data } = await this.axios.post(this.urlEstaciones, body, {
@@ -87,6 +89,9 @@ export default {
         console.log(error);
       }
     },
+    async eliminarSolicitud() {
+      await this.axios.delete(this.url + this.solicitud._id);
+    }
   },
   computed: {},
   components: {},
