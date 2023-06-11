@@ -1,7 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import vuejsStorage from 'vuejs-storage'
+
 
 Vue.use(Vuex)
+Vue.use(vuejsStorage)
 
 export default new Vuex.Store({
     state: {
@@ -44,5 +47,14 @@ export default new Vuex.Store({
         logoutUsuario(state) {
             state.usuario = null
         }
-    }
+    },
+    plugins: [
+        vuejsStorage({
+          keys: ['estacion'],
+          //keep state.count in localStorage
+          namespace: 'my-namespace',
+          driver: vuejsStorage.drivers.sessionStorage
+          //if you want to use sessionStorage instead of localStorage
+        })
+      ]
 })
