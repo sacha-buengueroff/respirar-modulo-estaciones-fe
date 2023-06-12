@@ -91,6 +91,7 @@ export default {
     },
     async eliminarSolicitud() {
       await this.axios.delete(this.url + this.solicitud._id);
+      location.reload()
     }
   },
   computed: {},
