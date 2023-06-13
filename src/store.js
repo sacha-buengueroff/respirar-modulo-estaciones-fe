@@ -9,7 +9,8 @@ Vue.use(vuejsStorage)
 export default new Vuex.Store({
     state: {
         estacion: {},
-        usuario: null
+        usuario: null,
+        role:null
     },
     actions: {
         modificarEstacion({commit}, estacion) {
@@ -20,32 +21,21 @@ export default new Vuex.Store({
                 console.log(error);
             }
         },
-        loginUsuario({commit}, usuario) {
+        setRol({commit}, role) {
             try {
-                commit('loginUsuario', usuario)
+                commit('setRol', role)
             }
             catch(error) {
                 console.log(error);
             }
-        },
-        logoutUsuario({commit}) {
-            try {
-                commit('logoutUsuario')
-            }
-            catch(error) {
-                console.log(error);
-            }
-        }  
+        }
     },
     mutations: {
         modificarEstacion(state, estacion) {
             state.estacion = estacion
         },
-        loginUsuario(state, usuario) {
-            state.usuario = usuario
-        },
-        logoutUsuario(state) {
-            state.usuario = null
+        setRol(state,role) {
+            state.role = role
         }
     },
     plugins: [
