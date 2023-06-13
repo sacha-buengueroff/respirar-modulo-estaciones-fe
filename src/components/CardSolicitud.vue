@@ -41,7 +41,7 @@
               <button class="btn btn-success my-3" @click="enviarSolicitud()">Aprobar solicitud</button>
             </td>
             <td colspan="2">
-              <button class="btn btn-danger my-3" @click="eliminarSolicitud()">Rechazar solicitud</button>
+              <button class="btn btn-danger my-3" @click="rechazarSolicitud()">Rechazar solicitud</button>
             </td>
           </tr>
         </tbody>
@@ -89,8 +89,8 @@ export default {
         console.log(error);
       }
     },
-    async eliminarSolicitud() {
-      await this.axios.delete(this.url + this.solicitud._id);
+    async rechazarSolicitud() {
+      await this.axios.delete(`${this.url}/rechazar/${this.solicitud._id}`);
       location.reload()
     }
   },
