@@ -9,8 +9,7 @@ Vue.use(vuejsStorage)
 export default new Vuex.Store({
     state: {
         estacion: {},
-        usuario: null,
-        role:null
+        role: null
     },
     actions: {
         modificarEstacion({commit}, estacion) {
@@ -21,9 +20,9 @@ export default new Vuex.Store({
                 console.log(error);
             }
         },
-        setRol({commit}, role) {
+        setRole({commit}, role) {
             try {
-                commit('setRol', role)
+                commit('setRole', role)
             }
             catch(error) {
                 console.log(error);
@@ -34,13 +33,13 @@ export default new Vuex.Store({
         modificarEstacion(state, estacion) {
             state.estacion = estacion
         },
-        setRol(state,role) {
+        setRole(state, role) {
             state.role = role
         }
     },
     plugins: [
         vuejsStorage({
-          keys: ['estacion'],
+          keys: ['estacion', 'role'],
           //keep state.count in localStorage
           namespace: 'my-namespace',
           driver: vuejsStorage.drivers.sessionStorage

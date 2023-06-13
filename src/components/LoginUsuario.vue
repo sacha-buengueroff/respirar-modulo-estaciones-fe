@@ -82,14 +82,18 @@ export default {
       };
     },
     async enviar() {
-      if ( this.existRole(this.formData.username) && this.existRole(this.formData.password)) {
+      if (this.existRole(this.formData.username) 
+          && this.existRole(this.formData.password)
+          && this.formData.username == this.formData.password) {
         this.$store.dispatch("setRole", {
-         role: this.datos.username,
+         role: this.formData.username,
+        });
+        console.log({
+         role: this.formData.username,
         });
         this.$router.push("/");
       } else {
         this.formData = this.getInitialData();
-        this.datos = {};
         this.formState._reset();
         this.error = true;
       }
