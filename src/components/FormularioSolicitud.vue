@@ -134,6 +134,7 @@
                     name="email"
                     required
                     :minlength="nombreMinLength"
+                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                   />
                   <field-messages name="email" show="$dirty">
                     <div slot="required" class="alert alert-danger mt-1">
@@ -142,6 +143,9 @@
                     <div slot="minlength" class="alert alert-danger mt-1">
                       Este campo debe poseer al menos
                       {{ nombreMinLength }} caracteres
+                    </div>
+                    <div slot="pattern" class="alert alert-danger mt-1">
+                      Por favor, introduce un correo electrónico válido
                     </div>
                   </field-messages>
                 </validate>
@@ -220,8 +224,7 @@
         <div
           class="jumbotron2"
           style="background-color: rgb(235, 255, 251); color: black"
-        >
-        </div>
+        ></div>
       </div>
     </div>
   </section>
@@ -231,8 +234,7 @@
 export default {
   name: "src-components-formulario-estacion",
   props: [],
-  async beforeMount() {
-  },
+  async beforeMount() {},
   data() {
     return {
       formDataEstacion: this.getInitialDataEstacion(),
@@ -269,7 +271,7 @@ export default {
         addLocaly: this.datos.adressLocality,
         addRegion: this.datos.adressRegion,
         external: true,
-        email: this.datos.email
+        email: this.datos.email,
       };
       try {
         let { data } = await this.axios.post(this.url, body, {
@@ -328,7 +330,7 @@ button {
   border-color: #2f2f2f !important;
 }
 button:hover {
-  background-color: #4B9960 !important;
+  background-color: #4b9960 !important;
   transition: 0.5s;
   border-color: #2f2f2f;
 }
