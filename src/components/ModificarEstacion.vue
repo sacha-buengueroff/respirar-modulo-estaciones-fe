@@ -247,7 +247,7 @@ export default {
       limiteVerde: 1000,
       limiteNaranja: 5000,
       presupuesto: "",
-      url: "http://estaciones-back:8081/estaciones/",
+      url: "http://localhost:8081/estaciones/",
       options: [],
     };
   },

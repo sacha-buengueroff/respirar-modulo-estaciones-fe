@@ -67,7 +67,7 @@ export default {
   },
   data() {
     return {
-      urlSolicitudes: "http://estaciones-back:8081/solicitudes",
+      urlSolicitudes: "http://localhost:8081/solicitudes",
       nombreSolicitud: "",
       solicitudes: [],
       mostrarCard: false,

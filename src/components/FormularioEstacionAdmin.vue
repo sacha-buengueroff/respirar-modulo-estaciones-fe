@@ -241,7 +241,7 @@ export default {
       datos: null,
       nombreMinLength: 3,
       presupuesto: "",
-      url: "http://estaciones-back:8081/estaciones/",
+      url: "http://localhost:8081/estaciones/",
       options: [],
     };
   },
