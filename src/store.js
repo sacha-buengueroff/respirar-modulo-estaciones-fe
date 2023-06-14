@@ -27,6 +27,14 @@ export default new Vuex.Store({
             catch(error) {
                 console.log(error);
             }
+        },
+        logoutRole({commit}) {
+            try {
+                commit('logoutRole')
+            }
+            catch(error) {
+                console.log(error);
+            }
         }
     },
     mutations: {
@@ -35,7 +43,11 @@ export default new Vuex.Store({
         },
         setRole(state, role) {
             state.role = role
+        },
+        logoutRole(state) {
+            state.role = null
         }
+
     },
     plugins: [
         vuejsStorage({

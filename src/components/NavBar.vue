@@ -64,7 +64,7 @@
         </button>
         <button
           class="btn btn-danger my-2 my-sm-0"
-          @click="cerrarSesion()"
+          @click="logout()"
           v-if="usuarioLogeadoVuex"
         >
           Logout
@@ -84,10 +84,9 @@ export default {
     return {};
   },
   methods: {
-    cerrarSesion() {
+    logout() {
       try {
-        this.$store.dispatch("logoutUsuario");
-        this.$router.push('/')
+        this.$store.dispatch("logoutRole");
       } catch (error) {
         console.log(error);
       }
