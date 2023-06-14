@@ -87,6 +87,7 @@ export default {
     logout() {
       try {
         this.$store.dispatch("logoutRole");
+        this.$router.push('/');
       } catch (error) {
         console.log(error);
       }
