@@ -5,7 +5,7 @@ COPY package*.json /app/
 
 WORKDIR /app
 
-EXPOSE 8081
+EXPOSE 8080
 
 RUN npm install
 

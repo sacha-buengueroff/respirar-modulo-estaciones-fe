@@ -99,7 +99,7 @@ export default {
   },
   data() {
     return {
-      url: "http://localhost:8080/estaciones/",
+      url: "http://estaciones-back:8081/estaciones/",
       email: "",
       url2: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       attribution:

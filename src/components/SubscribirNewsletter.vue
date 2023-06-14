@@ -65,7 +65,7 @@
         email: "",
         formState: {},
         formData: this.getInitialData(),
-        url: "http://localhost:8080/usuarios/enviarMail",
+        url: "http://estaciones-back:8081/usuarios/enviarMail",
         datos: {},
         emailEnviado: false
       }
