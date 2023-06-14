@@ -58,12 +58,13 @@ const miMixinGlobal = {
             return id
         },
         usuarioLogeadoVuex() {
-            if (this.$store.state.usuario) {
-                return true
-            }
-            else {
-                return false
-            }
+            return this.$store.state.role !== null
+        },
+        admin() {
+            return this.$store.state.role === 'admin'
+        },
+        external() {
+            return this.$store.state.role === 'external'
         }
     }
 }

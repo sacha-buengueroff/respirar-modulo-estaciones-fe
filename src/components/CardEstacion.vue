@@ -29,11 +29,11 @@
             <td>{{ estacion.address.value.address.addressLocality }}</td>
           </tr>
           <tr>
-            <td><b>Habilitar / Deshabilitar</b></td>
+            <td v-if="admin"><b>Habilitar / Deshabilitar</b></td>
             <td>{{ estacion.tipoConexion }}</td>
           </tr>
           <tr>
-            <div class="custom-control custom-switch">
+            <div class="custom-control custom-switch"  v-if="admin">
               <input
                 type="checkbox"
                 class="custom-control-input"
