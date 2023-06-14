@@ -279,7 +279,7 @@ export default {
         });
         this.datos = await this.axios.get(this.url + data.id)
         this.$store.dispatch("modificarEstacion", this.datos.data);
-        this.$router.push("/estacion");
+        this.$router.push("/estacion/" + data.id);
       } catch (error) {
         console.log(error);
       }

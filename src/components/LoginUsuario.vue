@@ -83,14 +83,8 @@ export default {
     },
     async enviar() {
       if (this.existRole(this.formData.username) 
-          && this.existRole(this.formData.password)
           && this.formData.username == this.formData.password) {
-        this.$store.dispatch("setRole", {
-         role: this.formData.username,
-        });
-        console.log({
-         role: this.formData.username,
-        });
+        this.$store.dispatch("setRole", this.formData.username);
         this.$router.push("/");
       } else {
         this.formData = this.getInitialData();
