@@ -35,16 +35,16 @@
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/formulario-solicitud">
+            <router-link to="/formulario-solicitud" v-if="external">
               <a class="nav-link" href="#">Solicita agregar tu Estacion</a>
             </router-link>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" v-if="admin">
             <router-link to="/formulario-estacion-admin">
               <a class="nav-link" href="#">Agrega tu Estacion</a>
             </router-link>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" v-if="admin">
             <router-link to="/solicitudes">
               <a class="nav-link" href="#">Solicitudes</a>
             </router-link>
