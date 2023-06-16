@@ -7,7 +7,6 @@ import Inicio from "./components/Inicio.vue";
 import Estacion from "./components/Estacion.vue";
 import LoginUsuario from "./components/LoginUsuario.vue";
 import ModificarEstacion from "./components/ModificarEstacion.vue";
-import SubscribirNewsletter from "./components/SubscribirNewsletter.vue";
 import FormularioEstacionAdmin from "./components/FormularioEstacionAdmin.vue";
 import BuscadorSolicitud from "./components/BuscadorSolicitud.vue";
 
@@ -23,7 +22,6 @@ export const router = new VueRouter({
     { path: "/estacion/:id", component: Estacion },
     { path: "/login", component: LoginUsuario },
     { path: "/modificar", component: ModificarEstacion },
-    { path: "/newsletter", component: SubscribirNewsletter },
     { path: "/solicitudes", component: BuscadorSolicitud },
   ],
 });

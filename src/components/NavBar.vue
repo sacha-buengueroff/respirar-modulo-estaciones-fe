@@ -49,11 +49,6 @@
               <a class="nav-link" href="#">Solicitudes</a>
             </router-link>
           </li>
-          <li class="nav-item" v-if="!usuarioLogeadoVuex">
-            <router-link to="/newsletter">
-              <a class="nav-link" href="#">Suscribirse al Newsletter</a>
-            </router-link>
-          </li>
         </ul>
         <button
           class="btn btn-success botonLogin my-2 my-sm-0 mr-3"
