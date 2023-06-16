@@ -35,17 +35,13 @@
           <tr>
             <td>Longitud</td>
             <td>{{ solicitud.coordinates[1] }}</td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <button class="btn btn-success my-3" @click="enviarSolicitud()">Aprobar solicitud</button>
-            </td>
-            <td colspan="2">
-              <button class="btn btn-danger my-3" @click="rechazarSolicitud()">Rechazar solicitud</button>
-            </td>
-          </tr>
+          </tr>          
         </tbody>
       </table>
+      <div>        
+          <button class="btn btn-success my-3 mr-1" @click="enviarSolicitud()">Aprobar solicitud</button>       
+          <button class="btn btn-danger my-3 ml-1" @click="rechazarSolicitud()">Rechazar solicitud</button>        
+      </div>
     </div>
   </div>
 </template>
@@ -122,4 +118,5 @@ export default {
   color: white;
   transition: all linear 200ms;
 }
+
 </style>

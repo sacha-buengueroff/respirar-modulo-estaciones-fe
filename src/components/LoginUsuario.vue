@@ -99,10 +99,12 @@ export default {
 
 <style scoped lang="css">
 .jumbotron {
-  background-image: url("../images/gastronomia\ global\ title.jpg");
+  background-image: url("../images/imagePortada2.jpg");
   color: white;
-  background-size: cover;
-  height: 100vh;
+  background-size: cover; 
+  height: 100vh; 
+  margin-bottom: 0px!important;
+  border-radius: 0px!important;
 }
 
 .cajaLogin {
@@ -129,9 +131,8 @@ button {
   background-color: #2f2f2f !important;
   border-color: #2f2f2f !important;
 }
-
-button:hover {
-  background-color: #D9553B !important;
+button:hover{
+  background-color: #D9553B!important;
   transition: 0.5s;
   border-color: #2f2f2f;
 }

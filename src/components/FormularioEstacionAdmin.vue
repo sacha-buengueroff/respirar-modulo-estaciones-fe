@@ -297,7 +297,7 @@ export default {
 
 <style scoped lang="css">
 .jumbotron {
-  background-image: url("../images/portada2.jpg");
+  background-image: url("../images/imagePortada2.jpg");
   color: white;
   background-size: cover;
 }
@@ -308,12 +308,15 @@ export default {
   padding: 20px 20px;
   margin-top: 50px;
 }
-
+.jumbotron{
+  margin-bottom: 0px !important;
+  border-radius: 0px !important;
+}
 .jumbotron2 {
   padding: 30px 10px;
   background-color: #2f2f2fb3 !important;
   color: white !important;
-  background-size: cover;
+  background-size: cover;  
 }
 
 table {
