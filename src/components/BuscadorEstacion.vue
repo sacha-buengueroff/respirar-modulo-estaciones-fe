@@ -140,8 +140,8 @@ export default {
   background-size: cover;
   height: 50vh;
   padding: 2rem 2rem !important;
-  margin-bottom: 0px !important;
-  border-radius: 0px !important;
+  margin-bottom: 0px!important;
+  border-radius: 0px!important;  
 }
 
 .jumbotron2 {
