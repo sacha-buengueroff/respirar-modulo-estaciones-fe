@@ -135,13 +135,13 @@ export default {
 
 <style scoped lang="css">
 .jumbotron {
-  background-image: url("../images/portada2.jpg");
+  background-image: url("../images/imagePortada2.jpg");
   color: white;
   background-size: cover;
   height: 50vh;
   padding: 2rem 2rem !important;
-  margin-bottom: 0px !important;
-  border-radius: 0px !important;
+  margin-bottom: 0px!important;
+  border-radius: 0px!important;  
 }
 
 .jumbotron2 {
