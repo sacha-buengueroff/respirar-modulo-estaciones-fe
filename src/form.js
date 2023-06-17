@@ -6,5 +6,4 @@ let options = {
     validators: {
     }
 }
-
 Vue.use(VueForm, options)

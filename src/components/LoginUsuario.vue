@@ -5,7 +5,6 @@
       <div class="cajaLogin">
         <h2>Login de usuario</h2>
         <br />
-
         <vue-form :state="formState" @submit.prevent="enviar()">
           <!-- ----------------------------------- -->
           <!--            CAMPO USUARIO            -->
@@ -25,9 +24,7 @@
               </div>
             </field-messages>
           </validate>
-
           <br />
-
           <!-- -------------------------------------- -->
           <!--            CAMPO CONTRASEÑA            -->
           <!-- -------------------------------------- -->
@@ -42,9 +39,7 @@
               </div>
             </field-messages>
           </validate>
-
           <br />
-
           <button class="btn btn-success my-3" :disabled="formState.$invalid">
             Enviar
           </button>
@@ -56,12 +51,9 @@
     </div>
   </section>
 </template>
-
 <script>
 export default {
   name: "src-componentes-login-usuario",
-  props: [],
-  mounted() { },
   data() {
     return {
       formState: {},
@@ -93,10 +85,8 @@ export default {
       }
     },
   },
-  computed: {},
 };
 </script>
-
 <style scoped lang="css">
 .jumbotron {
   background-image: url("../images/imagePortada2.jpg");
@@ -106,28 +96,15 @@ export default {
   margin-bottom: 0px!important;
   border-radius: 0px!important;
 }
-
 .cajaLogin {
   background-color: #2f2f2fac !important;
   border-radius: 5px;
   padding: 20px 20px;
   margin-top: 20px;
 }
-
-hr {
-  background-color: #bbb;
-}
-
-pre {
-  color: white;
-}
-
 button {
   text-decoration: none !important;
   color: rgba(255, 255, 255, 0.738) !important;
-}
-
-button {
   background-color: #2f2f2f !important;
   border-color: #2f2f2f !important;
 }

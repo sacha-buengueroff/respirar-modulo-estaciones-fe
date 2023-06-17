@@ -45,7 +45,6 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   name: "src-components-card-solicitud",
@@ -90,11 +89,8 @@ export default {
       location.reload()
     }
   },
-  computed: {},
-  components: {},
 };
 </script>
-
 <style scoped  lang="css">
 .card {
   border-radius: 8px;
@@ -113,10 +109,8 @@ export default {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
-
 .card:hover table {
   color: white;
   transition: all linear 200ms;
 }
-
 </style>
