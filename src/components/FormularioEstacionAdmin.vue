@@ -131,7 +131,7 @@
                     name="latitud"
                     required
                     :minlength="nombreMinLength"
-                    pattern="^-?([0-8]?[0-9]|90)(\.[0-9]{1,10})$" 
+                    pattern="^-?([0-8]?[0-9]|90)(\.[0-9]{1,20})?$" 
                   />
                   <field-messages name="latitud" show="$dirty">
                     <div slot="required" class="alert alert-danger mt-1">
@@ -159,7 +159,7 @@
                     name="longitud"
                     required
                     :minlength="nombreMinLength"
-                    pattern="^-?([0-9]{1,2}|1[0-7][0-9]|180)(\.[0-9]{1,10})$" 
+                    pattern="^-?([0-9]{1,2}|1[0-7][0-9]|180)(\.[0-9]{1,20})?$" 
                   />
                   <field-messages name="longitud" show="$dirty">
                     <div slot="required" class="alert alert-danger mt-1">
