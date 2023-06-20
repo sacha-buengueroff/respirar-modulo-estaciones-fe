@@ -260,10 +260,14 @@ export default {
         email: this.datos.email,
       };
       try {
-        let { data } = await this.axios.post(this.url, body, {
+        let res = await this.axios.post(this.url, body, {
           "content-type": "application/json",
         });
-        let insertedId = data._id;
+        if(res.status != 200) {
+            this.triggerError(res.data)
+            throw new Error(res.data)
+        }
+        let insertedId = res.data._id;
         this.datos.likes = 0;
         this.datos._id = insertedId;
         console.log(JSON.stringify(this.datos, null, 4));
