@@ -69,15 +69,9 @@
   </div>
   </section>
 </template>
-
 <script>
 export default {
   name: "src-components-nav-bar",
-  props: [],
-  mounted() {},
-  data() {
-    return {};
-  },
   methods: {
     logout() {
       try {
@@ -88,10 +82,8 @@ export default {
       }
     },
   },
-  computed: {},
 };
 </script>
-
 <style scoped lang="css">
 .nav-link img{
   width: 130px;
@@ -109,7 +101,6 @@ li a img{
 nav .navbar{
   background-color: transparent;
 }
-
 a, button{
   text-decoration: none!important;
   color: rgba(255, 255, 255, 0.738)!important;
@@ -128,5 +119,4 @@ button:hover{
   transition: 0.5s;
   border-color: #2f2f2f;
 }
-
 </style>

@@ -51,7 +51,6 @@
   </div>
 </div>
 <h1 class="titulo"><span>¡Últimas novedades!</span></h1>
-
 <div class="card-columns my-5 w-75 mx-auto">
   <div class="card">
     <img src="../images/WhatsApp-Image-2022-04-19-at-10.42.59-AM-1-833x1024.jpeg" class="card-img-top" alt="...">
@@ -121,22 +120,12 @@
 </div>
 </section>
 </template>
-
 <script>
 export default {
   name: "src-components-inicio",
-  props: [],
-  mounted() {},
-  data() {
-    return {};
-  },
-  methods: {},
-  computed: {},
 };
 </script>
-
 <style scoped lang="css">
-
 .imagenNosotros{
   width: 35%!important;
   margin-left: -90px;
@@ -144,7 +133,6 @@ export default {
 }
 .carousel{
   opacity: 50%;
-
 }
 .carousel-item {
   height: 65vh;
@@ -155,27 +143,21 @@ export default {
   -o-background-size: cover;
   background-size: cover;
 }
-
 .card-columns .card {
   display: inline-block;
   width: 100%;
 }
-
 .card-img-top {
   width: 100%;
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
 }
-
 .cajaCarrousel{
   background-color: black;
 }
-
 .bg-primary{
   background-color: #4B9960!important;
 }
-
-
 .titulo
 {
   background: linear-gradient(
@@ -189,12 +171,10 @@ export default {
   font-family: tahoma;
   font-weight: lighter;
 }
-
 .titulo span
 {
   padding: .5em;
   display: block;  
   text-transform: uppercase;
 }
-
 </style>

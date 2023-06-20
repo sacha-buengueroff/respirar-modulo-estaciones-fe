@@ -7,11 +7,9 @@
     </div>
   </div>
 </template>
-
 <script>
 import NavBar from "./components/NavBar.vue";
 import Footer from "./components/Footer.vue"
-
 export default {
   name: "App",
   components: {
@@ -20,12 +18,9 @@ export default {
   }
 }
 </script>
-
 <style>
 #app .container-fluid{
     padding-right: 0px;
     padding-left: 0px;
 }
-
-
 </style>

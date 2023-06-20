@@ -68,8 +68,7 @@
         <l-map
           style="height: 300px"
           :zoom="zoom"
-          :center="[mostrarLatitud, mostrarLongitud]"
-        >
+          :center="[mostrarLatitud, mostrarLongitud]">
           <l-tile-layer :url="url2" :attribution="attribution"></l-tile-layer>
           <l-marker
             :lat-lng="[mostrarLatitud, mostrarLongitud]"
@@ -79,10 +78,8 @@
     </div>
   </div>
 </template>
-
 <script>
 import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
-
 export default {
   name: "src-components-estacion",
   components: {
@@ -102,8 +99,7 @@ export default {
       url: "http://localhost:8080/estaciones/",
       email: "",
       url2: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-      attribution:
-        '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      attribution:'&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       zoom: 15,
       estacion: null
     };
@@ -123,109 +119,52 @@ export default {
   },
   computed: {
     mostrarNombre() {
-      if (this.estacion) {
-        let id = this.estacion.id
-        const splitArray = id.split("urn:ngsi-ld:")[1].split(":").join("");
-        return splitArray;            
-      }
-      else {
-        return ""
-      }
+      const splitArray =  this.estacion? this.estacion.id.split("urn:ngsi-ld:")[1].split(":").join("") : ""
+      return splitArray
     },
     mostrarpm1() {
-      if (this.estacion) {
-        let pm1 = this.estacion.pm1.value
+      let pm1 = this.estacion? this.estacion.pm1.value : ""
         return pm1
-      }
-      else {
-        return ""
-      }
     },
     mostrarpm10() {
-      if (this.estacion) {
-        let pm10 = this.estacion.pm10.value
+      let pm10 = this.estacion? this.estacion.pm10.value : ""
         return pm10
-      }
-      else {
-        return ""
-      }
     },
     mostrarpm25() {
-      if (this.estacion) {
-        let pm25 = this.estacion.pm25.value
+      let pm25 = this.estacion? this.estacion.pm25.value : ""
         return pm25
-      }
-      else {
-        return ""
-      }
     },
     mostrarReliability() {
-      if (this.estacion) {
-        let reliability = this.estacion.reliability.value
+      let reliability = this.estacion? this.estacion.reliability.value : ""
         return reliability
-      }
-      else {
-        return ""
-      }
     },
     mostrarTemperature() {
-      if (this.estacion) {
-        let temperature = this.estacion.temperature.value
+      let temperature = this.estacion? this.estacion.temperature.value : ""
         return temperature
-      }
-      else {
-        return ""
-      }
     },
     mostrarStreetAddress() {
-      if (this.estacion) {
-        let streetAddress = this.estacion.address.value.address.streetAddress;
-        return streetAddress;
-      }
-      else {
-        return ""
-      }
+      let streetAddress =  this.estacion? this.estacion.address.value.address.streetAddress : ""
+        return streetAddress
     },
     mostrarAddressRegion() {
-      if (this.estacion) {
-        let addressRegion = this.estacion.address.value.address.addressRegion;
-        return addressRegion;
-      }
-      else {
-        return ""
-      }
+      let addressRegion = this.estacion? this.estacion.address.value.address.addressRegion : ""
+        return addressRegion
     },
     mostrarAddressLocality() {
-      if (this.estacion) {
-        let addressLocality = this.estacion.address.value.address.addressLocality;
-        return addressLocality;
-      }
-      else {
-        return ""
-      }
+      let addressLocality = this.estacion? this.estacion.address.value.address.addressLocality : ""
+        return addressLocality
     },
     mostrarLatitud() {
-      if (this.estacion) {
-        let latitud = parseFloat(this.estacion.location.value.coordinates[0]);
-        return latitud;
-      }
-      else {
-        return ""
-      }
+      let latitud = this.estacion? parseFloat(this.estacion.location.value.coordinates[0]) : ""
+        return latitud
       },
     mostrarLongitud() {
-      if (this.estacion) {
-        let longitud = parseFloat(this.estacion.location.value.coordinates[1]);
-        return longitud;
-      }
-      else {
-        return ""
-      }
+      let longitud =  this.estacion? parseFloat(this.estacion.location.value.coordinates[1]) : ""
+        return longitud
     }
   },
 };
 </script>
-
 <style scoped lang="css">
 .jumbotron {
   background-image: url("../images/imagePortada2.jpg");
@@ -241,16 +180,9 @@ export default {
   margin-top: 20px;
   color: white;
 }
-.table {
-  color: white;
-}
-
 button {
   text-decoration: none !important;
   color: rgba(255, 255, 255, 0.738) !important;
-}
-
-button {
   background-color: #2f2f2f !important;
   border-color: #2f2f2f !important;
 }
@@ -258,9 +190,5 @@ button:hover {
   background-color: #d9553b !important;
   transition: 0.5s;
   border-color: #2f2f2f;
-}
-
-.modal-body {
-  color: black;
 }
 </style>
