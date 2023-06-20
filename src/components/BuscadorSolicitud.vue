@@ -73,6 +73,9 @@ export default {
     async getSolicitudes() {
       try {
         let res = await this.axios(this.urlSolicitudes);
+        if(res.status != 200) {
+          this.triggerError(res.data)
+        }
         let solicitudes = res.data;
         this.solicitudes = solicitudes;
         console.log(solicitudes);

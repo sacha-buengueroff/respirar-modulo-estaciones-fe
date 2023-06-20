@@ -72,11 +72,18 @@ export default {
     },
     async habilitarDeshabilitarEstacion(idEstacion) {
       try {
+        let res
         if (this.habilitacion) {
-          await this.axios.put(this.url + "suspenderEstacion/" + idEstacion);
+          res = await this.axios.put(this.url + "suspenderEstacion/" + idEstacion);
+          if(res.status != 200) {
+            this.triggerError(res.data)
+          }
           this.habilitacion = false;
         } else {
-          await this.axios.put(this.url + "habilitarEstacion/" + idEstacion);
+          res = await this.axios.put(this.url + "habilitarEstacion/" + idEstacion);
+          if(res.status != 201) {
+            this.triggerError(res.data)
+          }
           this.habilitacion = true;
         }
       } catch (error) {

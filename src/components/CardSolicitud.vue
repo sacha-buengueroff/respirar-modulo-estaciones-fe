@@ -71,21 +71,31 @@ export default {
       };
       console.log(body)
       try {
-        let { data } = await this.axios.post(this.urlEstaciones, body, {
+        let res = await this.axios.post(this.urlEstaciones, body, {
           headers: {
             "Content-Type": "application/json",
           },
         });   
-        this.datos = await this.axios.get(this.urlEstaciones + data.id)
+        if(res.status != 201) {
+            this.triggerError(res.data)
+            throw new Error(res.data)
+        }
+        this.datos = await this.axios.get(this.urlEstaciones + res.data.id)
         this.$store.dispatch("modificarEstacion", this.datos.data);
-        this.$router.push(`/estacion/${data.id}`);
-        await this.axios.delete(this.url + this.solicitud._id);
+        this.$router.push(`/estacion/${res.data.id}`);
+        res = this.axios.delete(this.url + this.solicitud._id);
+        if(res.status != 200) {
+            this.triggerError(res.data)
+        }
       } catch (error) {
         console.log(error);
       }
     },
     async rechazarSolicitud() {
-      await this.axios.delete(`${this.url}/rechazar/${this.solicitud._id}`);
+      let res = await this.axios.delete(`${this.url}/rechazar/${this.solicitud._id}`);
+      if(res.status != 200) {
+          this.triggerError(res.data)
+      }
       location.reload()
     }
   },

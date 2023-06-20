@@ -230,20 +230,21 @@ export default {
         external: false,
       };
       try {
-        let { data } = await this.axios.post(this.url, body, {
+        let res = await this.axios.post(this.url, body, {
           headers: {
             "Content-Type": "application/json",
           },
         });
-        this.datos = await this.axios.get(this.url + data.id)
+        if(res.status != 201) {
+            this.triggerError(res.data)
+            throw new Error(res.data)
+        }
+        this.datos = await this.axios.get(this.url + res.data.id)
         this.$store.dispatch("modificarEstacion", this.datos.data);
-        this.$router.push("/estacion/" + data.id);
+        this.$router.push("/estacion/" + res.data.id);
       } catch (error) {
         console.log(error);
       }
-    },
-    async getEstacion(id) {
-      return await this.axios.get(this.url + "/" + id)
     },
     mostrarEstacion() {
       return this.formDataEstacion.nombre != "";

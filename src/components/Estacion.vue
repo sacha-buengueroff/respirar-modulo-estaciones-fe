@@ -89,9 +89,7 @@ export default {
   },
   props: [],
   async beforeMount() {
-    console.log(`${this.url}${this.$route.params.id}`);
     let estacion = await this.axios(`${this.url}${this.$route.params.id}`)
-    console.log(estacion.data);
     this.estacion = estacion.data
   },
   data() {
@@ -105,17 +103,6 @@ export default {
     };
   },
   methods: {
-    async eliminarEstacion() {
-      try {
-        await this.axios.delete(`${this.url}${this.mostrarId}`, {
-          "content-type": "application/json",
-        });
-        this.$store.dispatch("modificarEstacion", {});
-        this.$router.push("/");
-      } catch (error) {
-        console.log(error);
-      }
-    },
   },
   computed: {
     mostrarNombre() {

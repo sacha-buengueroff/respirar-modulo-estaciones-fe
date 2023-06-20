@@ -2,6 +2,12 @@ import Vue from 'vue'
 
 const miMixinGlobal = {
     methods: {
+        triggerError(message) {
+            this.$root.$emit('error-triggered', {
+                error: true,
+                errorMessage: message,
+            });
+        }
     },
     computed: {
         mostrarNombreVuex() {

@@ -82,6 +82,9 @@ export default {
     async getEstaciones() {
       try {
         let res = await this.axios(this.urlEstaciones);
+        if(res.status != 200) {
+          this.triggerError(res.data)
+        }
         let estaciones = res.data;
         this.estaciones = estaciones;
       } catch (error) {
