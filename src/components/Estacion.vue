@@ -119,53 +119,47 @@ export default {
   },
   computed: {
     mostrarNombre() {
-      if (this.estacion) {
-        let id = this.estacion.id
-        const splitArray = id.split("urn:ngsi-ld:")[1].split(":").join("");
-        return splitArray;            
-      }
-      else {
-        return ""
-      }
+      const splitArray =  this.estacion? this.estacion.id.split("urn:ngsi-ld:")[1].split(":").join("") : ""
+      return splitArray
     },
     mostrarpm1() {
-      let pm1 =  this.estacion?this.estacion.pm1.value:""
+      let pm1 = this.estacion? this.estacion.pm1.value : ""
         return pm1
     },
     mostrarpm10() {
-      let pm10 =  this.estacion?this.estacion.pm10.value:""
+      let pm10 = this.estacion? this.estacion.pm10.value : ""
         return pm10
     },
     mostrarpm25() {
-      let pm25 =  this.estacion?this.estacion.pm25.value:""
+      let pm25 = this.estacion? this.estacion.pm25.value : ""
         return pm25
     },
     mostrarReliability() {
-      let reliability =  this.estacion?this.estacion.reliability.value:""
+      let reliability = this.estacion? this.estacion.reliability.value : ""
         return reliability
     },
     mostrarTemperature() {
-      let temperature =  this.estacion?this.estacion.temperature.value:""
+      let temperature = this.estacion? this.estacion.temperature.value : ""
         return temperature
     },
     mostrarStreetAddress() {
-      let streetAddress =  this.estacion?this.estacion.address.value.address.streetAddress:""
+      let streetAddress =  this.estacion? this.estacion.address.value.address.streetAddress : ""
         return streetAddress
     },
     mostrarAddressRegion() {
-      let addressRegion =  this.estacion?this.estacion.address.value.address.addressRegion:""
+      let addressRegion = this.estacion? this.estacion.address.value.address.addressRegion : ""
         return addressRegion
     },
     mostrarAddressLocality() {
-      let addressLocality =  this.estacion?this.estacion.address.value.address.addressLocality:""
+      let addressLocality = this.estacion? this.estacion.address.value.address.addressLocality : ""
         return addressLocality
     },
     mostrarLatitud() {
-      let latitud =  this.estacion?parseFloat(this.estacion.location.value.coordinates[0]):""
+      let latitud = this.estacion? parseFloat(this.estacion.location.value.coordinates[0]) : ""
         return latitud
       },
     mostrarLongitud() {
-      let longitud =  this.estacion?parseFloat(this.estacion.location.value.coordinates[1]):""
+      let longitud =  this.estacion? parseFloat(this.estacion.location.value.coordinates[1]) : ""
         return longitud
     }
   },
