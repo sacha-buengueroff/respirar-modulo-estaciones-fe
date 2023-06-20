@@ -71,7 +71,7 @@ export default {
   },
   data() {
     return {
-      urlEstaciones: "http://localhost:8080/estaciones",
+      urlEstaciones: "http://localhost:8081/estaciones",
       nombreEstacion: "",
       nombreUsuario: "",
       estaciones: [],

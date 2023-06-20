@@ -207,7 +207,7 @@ export default {
       datos: null,
       nombreMinLength: 3,
       presupuesto: "",
-      url: "http://localhost:8080/estaciones/",
+      url: "http://localhost:8081/estaciones/",
       options: [],
     };
   },
