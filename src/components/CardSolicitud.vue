@@ -83,7 +83,7 @@ export default {
         this.datos = await this.axios.get(this.urlEstaciones + res.data.id)
         this.$store.dispatch("modificarEstacion", this.datos.data);
         this.$router.push(`/estacion/${res.data.id}`);
-        res = this.axios.delete(this.url + this.solicitud._id);
+        res = await this.axios.delete(this.url + this.solicitud._id);
         if(res.status != 200) {
             this.triggerError(res.data)
         }
