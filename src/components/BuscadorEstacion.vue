@@ -1,7 +1,7 @@
 <template>
   <section class="src-components-buscador-estacion">
     <div class="jumbotron">
-      <br />
+      <br/>
       <ul class="list-group buscador my-3">
         <li class="list-group-item pb-4">
           <h2 class="mt-2">Buscá tu estacion</h2>
@@ -37,7 +37,6 @@
     <!-- ------------------------------------------------------- -->
     <!--                       CARDS                             -->
     <!-- ------------------------------------------------------- -->
-
     <div v-if="mostrarCard">
       <div
         class="jumbotron2"
@@ -47,8 +46,7 @@
         <div class="card-columns">
           <div
             class="col mb-4"
-            v-for="(estacion, index) in estacionesFiltradas"
-            :key="index"
+            v-for="(estacion, index) in estacionesFiltradas" :key="index"
           >
             <CardEstacion :estacion="estacion" />
           </div>
@@ -60,7 +58,6 @@
     </div>
   </section>
 </template>
-
 <script>
 import CardEstacion from "./CardEstacion.vue";
 export default {
@@ -132,7 +129,6 @@ export default {
   },
 };
 </script>
-
 <style scoped lang="css">
 .jumbotron {
   background-image: url("../images/imagePortada2.jpg");
@@ -143,7 +139,6 @@ export default {
   margin-bottom: 0px!important;
   border-radius: 0px!important;  
 }
-
 .jumbotron2 {
   padding: 30px 10px;
   background: rgb(255, 255, 255);
@@ -156,11 +151,9 @@ export default {
   color: white;
   background-size: cover;
 }
-
 hr {
   background-color: #bbb;
 }
-
 .list-group-item {
   background-color: #2f2f2fac !important;
 }

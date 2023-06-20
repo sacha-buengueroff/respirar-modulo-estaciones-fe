@@ -7,7 +7,6 @@
       <h4>
         Owner Id: {{ mostrarSoloNombre }}
       </h4>
-
       <table class="table table-sm">
         <thead>
           <tr>
@@ -51,7 +50,6 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   name: "src-components-card-estacion",
@@ -88,11 +86,7 @@ export default {
   },
   computed: {
     habilitadoDeshabilitado() {
-      if (this.habilitacion) {
-        return "Habilitado";
-      } else {
-        return "Deshabilitado";
-      }
+      return this.habilitacion?"Habilitado":"Deshabilitado"
     },
     mostrarId() {
       return this.estacion.id.split("urn:ngsi-ld:")[1].split(":").join("")
@@ -105,7 +99,6 @@ export default {
   components: {},
 };
 </script>
-
 <style scoped  lang="css">
 .card {
   border-radius: 8px;
@@ -124,7 +117,6 @@ export default {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
-
 .card:hover table {
   color: white;
   transition: all linear 200ms;

@@ -26,7 +26,6 @@
     <!-- ------------------------------------------------------- -->
     <!--                       CARDS                             -->
     <!-- ------------------------------------------------------- -->
-
     <div v-if="mostrarCard">
       <div
         class="jumbotron2"
@@ -51,11 +50,8 @@
     </div>
   </section>
 </template>
-
 <script>
-
 import CardSolicitud from "./CardSolicitud.vue";
-
 export default {
   name: "src-components-buscador-solicitud",
   components: {
@@ -106,7 +102,6 @@ export default {
   },
 };
 </script>
-
 <style scoped lang="css">
 .jumbotron {
   background-image: url("../images/imagePortada2.jpg");
@@ -127,17 +122,10 @@ export default {
 background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(75,153,96,1) 67%, rgba(67,105,77,1) 100%);
   color: white;
   background-size: cover;
-  
 }
-
-hr {
-  background-color: #bbb;
-}
-
 .list-group-item {
   background-color: #2f2f2fac !important;
 }
-
 table {
   width: -moz-available;
 }

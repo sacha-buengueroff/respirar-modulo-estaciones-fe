@@ -1,17 +1,15 @@
 <template>
-
   <section class="src-components-footer">
     <footer>
         <div class="footer-top">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
-                        
                         <h4>Sobre nosotros</h4>
-                        <p>Somos RespirAR, una solución tecnológica compuesta por estaciones de medición de calidad del aire que analizan su estado, permitiendo así estudiar su evolución a lo largo del tiempo.</p>
-
+                        <p>Somos RespirAR, una solución tecnológica compuesta por estaciones de medición de calidad del aire 
+                          que analizan su estado, permitiendo así estudiar su evolución a lo largo del tiempo.
+                        </p>
                     </div>
-
                     <div class="col-md-4">
                         <h4>Información</h4>
                         <ul class="address1">
@@ -20,7 +18,6 @@
                             <li><i class="fa fa-mobile" aria-hidden="true"></i> <a href="tel:11-4325-6578">11-4325-6578 </a></li>
                         </ul>
                     </div>
-
                     <div class="col-md-4">
                         <h4>¡Seguinos!</h4>
                         <ul class="social-icon">
@@ -29,7 +26,6 @@
                             <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -45,49 +41,24 @@
         </div>
     </footer>
   </section>
-
 </template>
-
 <script>
-
   export default  {
     name: 'src-components-footer',
-    props: [],
-    mounted () {
-
-    },
-    data () {
-      return {
-
-      }
-    },
-    methods: {
-
-    },
-    computed: {
-
-    }
 }
-
-
 </script>
-
 <style scoped lang="css">footer {
   color: #fff;
 }
 ul {
   padding: 0px;
-}
-ol, ul {
   margin-bottom: 0px;
 }
-
 .social-icon {
   padding: 0;
   margin-bottom: 0px;
       float: right;
 }
-
 .social-icon li {
   list-style: none;
   display: inline-block;
@@ -111,7 +82,6 @@ ol, ul {
   color: #ffffff;
   background: #262725;
 }
-
 .footer-top {
   background: #2f2f2f;
   padding:50px 0 50px;
@@ -125,7 +95,6 @@ ol, ul {
   font-size: 13px;
   line-height: 2;
 }
-
 footer p {
 margin-bottom:0;
 }

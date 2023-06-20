@@ -3,7 +3,6 @@
     <div class="jumbotron">
       <div class="cajaForm col-12">
         <h2>Ingresa una estacion (ADMIN)</h2>
-
         <table class="container-fluid">
           <tr class="col-12">
             <td class="estacion col-6">
@@ -38,7 +37,6 @@
                   </field-messages>
                 </validate>
                 <br />
-
                 <!-- ----------------------------------- -->
                 <!--        CAMPO Street Address         -->
                 <!-- ----------------------------------- -->
@@ -65,7 +63,6 @@
                   </field-messages>
                 </validate>
                 <br />
-
                 <!-- ----------------------------------- -->
                 <!--       CAMPO Address Locality        -->
                 <!-- ----------------------------------- -->
@@ -92,7 +89,6 @@
                   </field-messages>
                 </validate>
                 <br />
-
                 <!-- ----------------------------------- -->
                 <!--        CAMPO Address Region         -->
                 <!-- ----------------------------------- -->
@@ -119,12 +115,10 @@
                   </field-messages>
                 </validate>
                 <br />
-
                 <!-- ----------------------------------- -->
                 <!--          CAMPO Coordenadas          -->
                 <!-- ----------------------------------- -->
                 <h1>Coordenadas</h1>
-
                 <!--            CAMPO Latitud           -->
                 <validate tag="div">
                   <label for="latitud">Latitud</label>
@@ -149,7 +143,6 @@
                   </field-messages>
                 </validate>
                 <br />
-
                 <!--            CAMPO Longitud           -->
                 <validate tag="div">
                   <label for="longitud">Longitud</label>
@@ -174,38 +167,6 @@
                   </field-messages>
                 </validate>
                 <br />
-
-                <!-- -------------------------------------------- -->
-                <!--           CAMPO Tipo de conexion             -->
-                <!-- -------------------------------------------- -->
-                <!-- <div class="form-row">
-                  <div class="form-group col-md-4">
-                    <validate tag="div">
-                      <label for="tipoConexion">Tipo de conexion</label>
-                      <select
-                        name="cateogria"
-                        id="tipoConexion"
-                        class="form-control"
-                        v-model="formDataEstacion.tipoConexion"
-                        required
-                      >
-                        <option
-                          v-for="(
-                            tipoConexion, index
-                          ) in options.tipoConexiones"
-                          :key="index"
-                        >
-                          {{ tipoConexion }}
-                        </option>
-                      </select>
-                      <field-messages name="tipoConexion" show="$dirty">
-                        <div slot="required" class="alert alert-danger mt-1">
-                          Campo requerido
-                        </div>
-                      </field-messages>
-                    </validate>
-                  </div>
-                </div> -->
                 <button
                   class="btn btn-success my-3"
                   :disabled="formStateEstacion.$invalid"
@@ -217,9 +178,7 @@
           </tr>
         </table>
       </div>
-
       <br />
-
       <div class="jumbotron2" v-if="mostrarEstacion()">
         <div
           class="jumbotron2"
@@ -229,7 +188,6 @@
     </div>
   </section>
 </template>
-
 <script>
 export default {
   name: "src-components-formulario-estacion",
@@ -291,17 +249,14 @@ export default {
       return this.formDataEstacion.nombre != "";
     },
   },
-  computed: {},
 };
 </script>
-
 <style scoped lang="css">
 .jumbotron {
   background-image: url("../images/imagePortada2.jpg");
   color: white;
   background-size: cover;
 }
-
 .cajaForm {
   background-color: #2f2f2fac !important;
   border-radius: 5px;
@@ -318,17 +273,15 @@ export default {
   color: white !important;
   background-size: cover;  
 }
-
 table {
   color: white;
+  margin-left: auto;
+  margin-right: auto;
+  width: -moz-available;
 }
-
 button {
   text-decoration: none !important;
   color: rgba(255, 255, 255, 0.738) !important;
-}
-
-button {
   background-color: #2f2f2f !important;
   border-color: #2f2f2f !important;
 }
@@ -340,14 +293,7 @@ button:hover {
 hr {
   background-color: #bbb;
 }
-
 td.estacion {
   padding: 50px;
-}
-
-table {
-  margin-left: auto;
-  margin-right: auto;
-  width: -moz-available;
 }
 </style>
