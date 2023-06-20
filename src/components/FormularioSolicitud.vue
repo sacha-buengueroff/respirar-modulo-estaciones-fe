@@ -161,6 +161,7 @@
                     name="latitud"
                     required
                     :minlength="nombreMinLength"
+                    pattern="^-?([0-8]?[0-9]|90)(\.[0-9]{1,10})$" 
                   />
                   <field-messages name="latitud" show="$dirty">
                     <div slot="required" class="alert alert-danger mt-1">
@@ -169,6 +170,9 @@
                     <div slot="minlength" class="alert alert-danger mt-1">
                       Este campo debe poseer al menos
                       {{ nombreMinLength }} caracteres
+                    </div>
+                    <div slot="pattern" class="alert alert-danger mt-1">
+                      Por favor, ingrese una latitud valida
                     </div>
                   </field-messages>
                 </validate>
@@ -185,6 +189,7 @@
                     name="longitud"
                     required
                     :minlength="nombreMinLength"
+                    pattern="^-?([0-9]{1,2}|1[0-7][0-9]|180)(\.[0-9]{1,10})$" 
                   />
                   <field-messages name="longitud" show="$dirty">
                     <div slot="required" class="alert alert-danger mt-1">
@@ -193,6 +198,9 @@
                     <div slot="minlength" class="alert alert-danger mt-1">
                       Este campo debe poseer al menos
                       {{ nombreMinLength }} caracteres
+                    </div>
+                    <div slot="pattern" class="alert alert-danger mt-1">
+                      Por favor, ingrese una longitud valida
                     </div>
                   </field-messages>
                 </validate>
