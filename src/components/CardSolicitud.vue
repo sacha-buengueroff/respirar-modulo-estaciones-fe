@@ -76,7 +76,6 @@ export default {
             "Content-Type": "application/json",
           },
         });   
-        console.log(res)
         if(res.status != 201) {
             this.triggerError(res.data)
             throw new Error(res.data)
@@ -85,7 +84,6 @@ export default {
         this.$store.dispatch("modificarEstacion", this.datos.data);
         this.$router.push(`/estacion/${res.data.id}`);
         res = await this.axios.delete(this.url + this.solicitud._id);
-        console.log(res);
         if(res.status != 200) {
             this.triggerError(res.data)
         }
