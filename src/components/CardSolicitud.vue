@@ -54,8 +54,8 @@ export default {
     return {
       datos: null,
       habilitacion: null,
-      url: "http://localhost:8081/solicitudes/",
-      urlEstaciones: "http://localhost:8081/estaciones/",
+      url: "http://localhost:8080/solicitudes/",
+      urlEstaciones: "http://localhost:8080/estaciones/",
     };
   },
   methods: {
