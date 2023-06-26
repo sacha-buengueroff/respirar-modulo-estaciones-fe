@@ -207,7 +207,7 @@ export default {
       datos: null,
       nombreMinLength: 3,
       presupuesto: "",
-      url: "http://localhost:8081/estaciones/",
+      url: "http://"+location.hostname+":8081/estaciones/",
       options: [],
     };
   },
@@ -238,6 +238,7 @@ export default {
         external: false,
       };
       try {
+        console.log(this.url)
         let res = await this.axios.post(this.url, body, {
           headers: {
             "Content-Type": "application/json",

@@ -235,7 +235,7 @@ export default {
       formStateEstacion: {},
       datos: null,
       nombreMinLength: 3,
-      url: "http://localhost:8081/solicitudes",
+      url: "http://"+location.hostname+":8081/solicitudes",
       options: [],
     };
   },

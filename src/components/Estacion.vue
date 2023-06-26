@@ -1,6 +1,8 @@
 <template>
   <div class="jumbotron">
     <div class="card mt-5 cajaForm">
+      <h1>rod</h1>
+      {{ aaaa }}
       <div class="card-body">
         <table>
           <tr>
@@ -94,7 +96,7 @@ export default {
   },
   data() {
     return {
-      url: "http://localhost:8081/estaciones/",
+      url: "http://"+location.hostname+":8081/estaciones/",
       email: "",
       url2: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       attribution:'&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
@@ -102,9 +104,11 @@ export default {
       estacion: null
     };
   },
-  methods: {
+  mounted:{
+    
   },
   computed: {
+   
     mostrarNombre() {
       const splitArray =  this.estacion? this.estacion.id.split("urn:ngsi-ld:")[1].split(":").join("") : ""
       return splitArray

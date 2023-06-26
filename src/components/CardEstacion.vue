@@ -61,7 +61,7 @@ export default {
     return {
       datos: null,
       habilitacion: null,
-      url: "http://localhost:8081/estaciones/",
+      url: "http://"+location.hostname+":8081/estaciones/",
     };
   },
   methods: {
